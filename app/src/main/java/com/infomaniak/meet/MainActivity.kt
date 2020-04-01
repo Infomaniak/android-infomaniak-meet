@@ -6,6 +6,7 @@ import android.text.TextWatcher
 import android.view.inputmethod.EditorInfo
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ShareCompat
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jitsi.meet.sdk.JitsiMeet
 import org.jitsi.meet.sdk.JitsiMeetActivity
@@ -15,7 +16,10 @@ import java.net.URL
 
 class MainActivity : AppCompatActivity() {
 
-    private val serverURL = URL("https://meet.infomaniak.com/")
+    private val serveur = "https://meet.infomaniak.com/"
+    private val serverURL = URL(serveur)
+    private val hashCharList = ('a'..'z').toList().toTypedArray()
+    lateinit var idRoom: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.AppTheme)
@@ -31,7 +35,7 @@ class MainActivity : AppCompatActivity() {
             if (createButton.isEnabled) createButton.callOnClick()
         }
 
-        val textWatcher = object : TextWatcher {
+        userNameEdit.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(text: Editable?) {
             }
 
@@ -39,32 +43,37 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onTextChanged(text: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                createButton.isEnabled =
-                    roomNameEdit.text.toString().length > 2 && userNameEdit.text.toString().length > 2
+                text?.let {
+                    createButton.isEnabled = text.length > 1
+                }
             }
+        })
+
+        shareButton.setOnClickListener {
+            ShareCompat.IntentBuilder.from(this)
+                .setType("text/plain")
+                .setChooserTitle(R.string.app_name)
+                .setText(serveur + idRoom)
+                .startChooser()
         }
-        roomNameEdit.addTextChangedListener(textWatcher)
-        userNameEdit.addTextChangedListener(textWatcher)
 
         createButton.setOnClickListener {
             createRoom()
         }
+
+        idRoom = (1..16).map { hashCharList.random() }.joinToString("")
+        intent.data?.let { uri ->
+            uri.path?.let {
+                idRoom = it.substring(1)
+            }
+        }
     }
 
     private fun createRoom() {
-        val roomName = roomNameEdit.text.toString()
-        if (roomName.isNotBlank()) {
-            val userName = userNameEdit.text.toString()
-            if (userName.isNotBlank()) {
-                val userInfo = JitsiMeetUserInfo()
-                userInfo.displayName = userName
-                launchRoom(roomName, userInfo)
-            } else {
-                userNameLayout.error = "Le champs ne peut etre vide"
-            }
-        } else {
-            roomNameLayout.error = "Le champs ne peut etre vide"
-        }
+        val userName = userNameEdit.text.toString()
+        val userInfo = JitsiMeetUserInfo()
+        userInfo.displayName = userName
+        launchRoom(idRoom, userInfo)
     }
 
     private fun launchRoom(
@@ -76,6 +85,7 @@ class MainActivity : AppCompatActivity() {
             .setUserInfo(userInfo)
             .build()
         JitsiMeetActivity.launch(this, options)
+        finish()
     }
 
     private fun EditText.onDone(callback: () -> Unit) {

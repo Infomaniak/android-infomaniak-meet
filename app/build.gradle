@@ -38,5 +38,5 @@ dependencies {
 
     implementation 'com.google.android.material:material:1.1.0'
 
-    implementation('org.jitsi.react:jitsi-meet-sdk:2.5.1') { transitive = true }
+    implementation('org.jitsi.react:jitsi-meet-sdk:2.7.0') { transitive = true }
 }
