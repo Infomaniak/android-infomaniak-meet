@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="primary">@color/infomaniak</color>
+    <color name="primaryDark">#0079CC</color>
+    <color name="accent">@color/infomaniak</color>
+    <color name="primaryText">#828282</color>
+    <color name="secondaryText">#9F9F9F</color>
+
+    <color name="appBar">@android:color/white</color>
+    <color name="background">@android:color/white</color>
+    <color name="launchBackground">@color/infomaniak</color>
+    <color name="title">#333333</color>
+
+    <color name="infomaniak">#0098FF</color>
+
+    <color name="error">#FA504E</color>
+    <color name="shadow">#80000000</color>
+
+</resources>
