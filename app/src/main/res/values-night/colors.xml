@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primaryText">#9E9E9E</color>
+    <color name="secondaryText">#9E9E9E</color>
+
+    <color name="cardViewBackground">#202124</color>
+    <color name="background">#2D2E30</color>
+    <color name="title">@android:color/white</color>
+
+    <color name="launchBackground">@color/background</color>
+</resources>
