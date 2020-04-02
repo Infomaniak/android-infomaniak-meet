@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">kMeet</string>
+    <string name="userNameHint">Choose a nickname</string>
+    <string name="createButton">Start the meeting</string>
+    <string name="shareButton">Invite users</string>
+    <string name="title">Create or join a meeting</string>
+    <string name="shareText">Click the following link to join the meeting:\n%s</string>
+</resources>

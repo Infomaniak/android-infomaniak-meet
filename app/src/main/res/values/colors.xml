@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="primary">#63BA8A</color>
+    <color name="primary">#3DBD86</color>
     <color name="primaryDark">#0079CC</color>
     <color name="accent">@color/infomaniak</color>
     <color name="primaryText">#828282</color>

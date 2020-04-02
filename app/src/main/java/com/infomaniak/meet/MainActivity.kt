@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
             ShareCompat.IntentBuilder.from(this)
                 .setType("text/plain")
                 .setChooserTitle(R.string.app_name)
-                .setText(serveur + idRoom)
+                .setText(getString(R.string.shareText,serveur + idRoom))
                 .startChooser()
         }
 
@@ -64,7 +64,9 @@ class MainActivity : AppCompatActivity() {
         idRoom = (1..16).map { hashCharList.random() }.joinToString("")
         intent.data?.let { uri ->
             uri.path?.let {
-                idRoom = it.substring(1)
+                if (it.isNotBlank()) {
+                    idRoom = it.substring(1)
+                }
             }
         }
     }

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">kMeet</string>
+    <string name="userNameHint">Wählen Sie ein Pseudonym</string>
+    <string name="createButton">Das Meeting starten</string>
+    <string name="shareButton">Benutzer einladen</string>
+    <string name="title">Meeting erstellen oder teilnehmen</string>
+    <string name="shareText">Klicken Sie auf den folgenden Link, um dem Meeting beizutreten:\n%s</string>
+</resources>

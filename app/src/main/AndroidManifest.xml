@@ -12,9 +12,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.Launcher"
-            tools:ignore="LockedOrientationActivity">
+            android:theme="@style/AppTheme.Launcher">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

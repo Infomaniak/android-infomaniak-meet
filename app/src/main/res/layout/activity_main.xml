@@ -78,7 +78,7 @@
                     android:id="@+id/userNameEdit"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="@string/pseudoHint"
+                    android:hint="@string/userNameHint"
                     android:imeOptions="actionDone"
                     android:importantForAutofill="no"
                     android:inputType="textNoSuggestions|textCapSentences"
