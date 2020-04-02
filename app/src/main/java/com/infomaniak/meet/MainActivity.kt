@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
     private val serveur = "https://meet.infomaniak.com/"
     private val serverURL = URL(serveur)
     private val hashCharList = ('a'..'z').toList().toTypedArray()
-    lateinit var idRoom: String
+    private lateinit var idRoom: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.AppTheme)

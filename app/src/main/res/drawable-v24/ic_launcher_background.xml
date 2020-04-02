@@ -16,14 +16,14 @@
                 <gradient
                     android:endX="998.3584"
                     android:endY="998.3584"
-                    android:startX="27.434116"
-                    android:startY="27.434116"
+                    android:startX="461.94223"
+                    android:startY="479.21857"
                     android:type="linear">
                     <item
-                        android:color="#FF0098FF"
+                        android:color="#FF3DBD86"
                         android:offset="0" />
                     <item
-                        android:color="#FF006CB4"
+                        android:color="#FF199560"
                         android:offset="1" />
                 </gradient>
             </aapt:attr>
