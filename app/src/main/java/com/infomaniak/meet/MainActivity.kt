@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
             ShareCompat.IntentBuilder.from(this)
                 .setType("text/plain")
                 .setChooserTitle(R.string.app_name)
-                .setText(getString(R.string.shareText,serveur + idRoom))
+                .setText(getString(R.string.shareText, serveur + idRoom))
                 .startChooser()
         }
 
