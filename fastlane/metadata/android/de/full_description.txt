@@ -1,0 +1,20 @@
+Infomaniak Meet ist eine datenschutzkonforme Videokonferenz-Lösung für Ihre Unterhaltungen.
+
+Das Produkt ist werbefrei und verlangt weder eine E-Mail-Adresse noch eine Registrierung. Ihre Gespräche werden nicht ausgewertet und passieren lediglich die Infomaniak-Server in der Schweiz.
+
+Mit der App kMeet können Sie:
+
+- Online-Meetings (Audio und Video) mit mehreren Personen einrichten
+- Meetings beitreten, die mit Infomaniak Meet oder Jitsi eingerichtet werden
+- Den Zugang zu Ihren Meetings mit Passwort schützen
+- Über die integrierte Chat-Funktion kommunizieren und Ressourcen teilen
+- Ihre Teilnehmenden über einen URL einladen
+
+Vorteile von kMeet:
+
+- Hervorragende Sprachqualität
+- Unbegrenzte Teilnehmerzahl (je nach Ressourcen)
+- Kompatibel mit WLAN, 4G/LTE und 3G
+- Für Desktopcomputer wird keine App benötigt
+
+Der Dienst wird kostenlos von dem Schweizer Hosting-Anbieter Infomaniak angeboten und basiert auf der Open-Source-Anwendung Jitsi Meet. Mehr dazu unter: https://www.infomaniak.com/meet/
