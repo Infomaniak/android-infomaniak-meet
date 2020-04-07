@@ -7,6 +7,7 @@ import android.view.inputmethod.EditorInfo
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ShareCompat
+import androidx.preference.PreferenceManager
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jitsi.meet.sdk.JitsiMeet
 import org.jitsi.meet.sdk.JitsiMeetActivity
@@ -61,14 +62,29 @@ class MainActivity : AppCompatActivity() {
             createRoom()
         }
 
+        val userName =
+            PreferenceManager.getDefaultSharedPreferences(this).getString("userName", null)
+        userNameEdit.setText(userName)
+
         idRoom = (1..16).map { hashCharList.random() }.joinToString("")
         intent.data?.let { uri ->
             uri.path?.let {
                 if (it.isNotBlank()) {
                     idRoom = it.substring(1)
+                    createButton.text = getString(R.string.acceptButton)
+                    if (createButton.isEnabled) {
+                        createButton.callOnClick()
+                    }
                 }
             }
         }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        val userName = userNameEdit.text.toString()
+        PreferenceManager.getDefaultSharedPreferences(this).edit().putString("userName", userName)
+            .apply()
     }
 
     private fun createRoom() {

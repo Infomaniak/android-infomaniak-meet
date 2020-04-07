@@ -19,7 +19,7 @@ buildscript {
 allprojects {
     repositories {
         maven {
-            url "https://github.com/jitsi/jitsi-maven-repository/raw/master/releases"
+            url "https://github.com/Infomaniak/jitsi-maven-repository/raw/infomaniak/releases"
         }
         google()
         jcenter()

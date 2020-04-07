@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">kMeet</string>
     <string name="userNameHint">Choisir un pseudo</string>
-    <string name="createButton">Lancer la réunion</string>
+    <string name="createButton">Créer la réunion</string>
+    <string name="acceptButton">Accepter l’invitation</string>
     <string name="shareButton">Inviter des utilisateurs</string>
     <string name="title">Créez ou rejoignez une réunion</string>
     <string name="shareText">Cliquez sur le lien suivant pour rejoindre une conférence :\n%s</string>
