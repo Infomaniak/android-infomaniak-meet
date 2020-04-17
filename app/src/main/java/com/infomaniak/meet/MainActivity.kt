@@ -68,15 +68,31 @@ class MainActivity : AppCompatActivity() {
 
         idRoom = (1..16).map { hashCharList.random() }.joinToString("")
         intent.data?.let { uri ->
-            uri.path?.let {
-                if (it.isNotBlank()) {
-                    idRoom = it.substring(1)
-                    createButton.text = getString(R.string.acceptButton)
-                    if (createButton.isEnabled) {
-                        createButton.callOnClick()
+            when (uri.scheme) {
+                "https" -> {
+                    uri.path?.let { path ->
+                        if (path.isNotBlank()) {
+                            idRoom = path.substring(1)
+                            setAcceptButton()
+                        }
+                    }
+                }
+                else -> {
+                    uri.host?.let { host ->
+                        if (host.isNotBlank()) {
+                            idRoom = host
+                            setAcceptButton()
+                        }
                     }
                 }
             }
+        }
+    }
+
+    private fun setAcceptButton() {
+        createButton.text = getString(R.string.acceptButton)
+        if (createButton.isEnabled) {
+            createButton.callOnClick()
         }
     }
 
