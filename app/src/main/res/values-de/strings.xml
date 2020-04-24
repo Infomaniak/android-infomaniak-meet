@@ -6,4 +6,10 @@
     <string name="shareButton">Benutzer einladen</string>
     <string name="title">Meeting erstellen oder teilnehmen</string>
     <string name="shareText">Klicken Sie auf den folgenden Link, um dem Meeting beizutreten:\n%s</string>
+    <string name="joinRoomTitle">Einer bereits laufenden Besprechung beitreten</string>
+    <string name="joinRoomAlertDescription">Klicken Sie auf den geteilten Link oder fügen Sie die ID Nummer der Besprechung hier ein</string>
+    <string name="joinRoom">Beitreten</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="roomNameHint">ID der Besprechung</string>
+    <string name="mandatoryUserName">Pseudonym obligatorisch</string>
 </resources>

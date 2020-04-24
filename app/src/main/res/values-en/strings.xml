@@ -6,4 +6,10 @@
     <string name="shareButton">Invite users</string>
     <string name="title">Create or join a meeting</string>
     <string name="shareText">Click the following link to join the meeting:\n%s</string>
+    <string name="joinRoomTitle">Join an existing meeting</string>
+    <string name="joinRoomAlertDescription">Click on a share link or write the meeting ID here</string>
+    <string name="joinRoom">Join</string>
+    <string name="cancel">Cancel</string>
+    <string name="roomNameHint">Meeting ID</string>
+    <string name="mandatoryUserName">Mandatory nickname</string>
 </resources>

@@ -6,4 +6,10 @@
         <item name="android:navigationBarColor">@color/background</item>
     </style>
 
+    <style name="DialogStyle" parent="Theme.MaterialComponents.DayNight.Dialog.Alert">
+        <item name="android:background">@drawable/round_corner_background</item>
+        <item name="colorPrimary">@android:color/white</item>
+        <item name="android:windowTitleStyle">@style/TitleDialog</item>
+    </style>
+
 </resources>

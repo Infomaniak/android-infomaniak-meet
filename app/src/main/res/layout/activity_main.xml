@@ -94,9 +94,20 @@
                 android:id="@+id/createButton"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
-                android:enabled="false"
                 android:text="@string/createButton" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/joinButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:autoLink="all"
+        android:text="@string/joinRoomTitle"
+        android:textColor="@color/primary"
+        app:layout_constraintEnd_toEndOf="@+id/cardView"
+        app:layout_constraintStart_toStartOf="@+id/cardView"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

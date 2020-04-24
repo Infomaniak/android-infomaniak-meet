@@ -30,4 +30,15 @@
         <item name="boxBackgroundColor">@color/background</item>
     </style>
 
+    <style name="DialogStyle" parent="Theme.MaterialComponents.Light.Dialog.Alert">
+        <item name="android:background">@drawable/round_corner_background</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="android:windowTitleStyle">@style/TitleDialog</item>
+    </style>
+
+    <style name="TitleDialog">
+        <item name="android:textSize">35sp</item>
+        <item name="android:textColor">@color/title</item>
+    </style>
+
 </resources>

@@ -1,14 +1,18 @@
 package com.infomaniak.meet
 
+import android.content.DialogInterface
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.widget.EditText
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ShareCompat
 import androidx.preference.PreferenceManager
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.join_alertview.view.*
 import org.jitsi.meet.sdk.JitsiMeet
 import org.jitsi.meet.sdk.JitsiMeetActivity
 import org.jitsi.meet.sdk.JitsiMeetConferenceOptions
@@ -33,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         JitsiMeet.setDefaultConferenceOptions(defaultOptions)
 
         userNameEdit.onDone {
-            if (createButton.isEnabled) createButton.callOnClick()
+            createButton.callOnClick()
         }
 
         userNameEdit.addTextChangedListener(object : TextWatcher {
@@ -45,7 +49,9 @@ class MainActivity : AppCompatActivity() {
 
             override fun onTextChanged(text: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 text?.let {
-                    createButton.isEnabled = text.length > 1
+                    if (text.length > 1) {
+                        userNameLayout.error = null
+                    }
                 }
             }
         })
@@ -59,7 +65,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         createButton.setOnClickListener {
-            createRoom()
+            checkUsername { userName -> createRoom(userName) }
+        }
+
+        joinButton.setOnClickListener {
+            checkUsername { userName -> joinRoom(userName) }
         }
 
         val userName =
@@ -91,9 +101,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setAcceptButton() {
         createButton.text = getString(R.string.acceptButton)
-        if (createButton.isEnabled) {
-            createButton.callOnClick()
-        }
+        createButton.callOnClick()
     }
 
     override fun onPause() {
@@ -103,11 +111,37 @@ class MainActivity : AppCompatActivity() {
             .apply()
     }
 
-    private fun createRoom() {
+    private fun checkUsername(callback: (userName: String) -> Unit) {
         val userName = userNameEdit.text.toString()
+        if (userName.length > 1) {
+            callback(userName)
+        } else {
+            userNameLayout.error = getString(R.string.mandatoryUserName)
+        }
+    }
+
+    private fun joinRoom(userName: String) {
+        val view: View = layoutInflater.inflate(R.layout.join_alertview, null)
+
+        AlertDialog.Builder(this, R.style.DialogStyle)
+            .setTitle(R.string.joinRoomTitle)
+            .setMessage(R.string.joinRoomAlertDescription)
+            .setView(view)
+            .setNegativeButton(R.string.cancel, null)
+            .setPositiveButton(R.string.joinRoom) { _: DialogInterface?, _: Int ->
+                val roomName = view.roomNameEdit.text.toString()
+                if (roomName.length > 1) {
+                    createRoom(userName, roomName)
+                }
+            }
+            .setCancelable(false)
+            .show()
+    }
+
+    private fun createRoom(userName: String, roomName: String = idRoom) {
         val userInfo = JitsiMeetUserInfo()
         userInfo.displayName = userName
-        launchRoom(idRoom, userInfo)
+        launchRoom(roomName, userInfo)
     }
 
     private fun launchRoom(
