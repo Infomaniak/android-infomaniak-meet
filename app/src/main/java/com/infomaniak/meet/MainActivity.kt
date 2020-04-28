@@ -18,6 +18,7 @@ import org.jitsi.meet.sdk.JitsiMeetActivity
 import org.jitsi.meet.sdk.JitsiMeetConferenceOptions
 import org.jitsi.meet.sdk.JitsiMeetUserInfo
 import java.net.URL
+import java.net.URLEncoder
 
 class MainActivity : AppCompatActivity() {
 
@@ -148,8 +149,9 @@ class MainActivity : AppCompatActivity() {
         roomNameText: String,
         userInfo: JitsiMeetUserInfo
     ) {
+        val roomName = URLEncoder.encode(roomNameText, "UTF-8").replace("+", "%20")
         val options = JitsiMeetConferenceOptions.Builder()
-            .setRoom(roomNameText)
+            .setRoom(roomName)
             .setUserInfo(userInfo)
             .build()
         JitsiMeetActivity.launch(this, options)
