@@ -10,8 +10,8 @@ android {
         applicationId "com.infomaniak.meet"
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 7
-        versionName "1.4.1"
+        versionCode 8
+        versionName "1.5"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -39,7 +39,7 @@ dependencies {
 
     implementation 'com.google.android.material:material:1.1.0'
 
-    implementation('org.jitsi.react:jitsi-meet-sdk:2.8.0') {
+    implementation('org.jitsi.react:jitsi-meet-sdk:2.8.2') {
         transitive = true
     }
 }
