@@ -3,6 +3,7 @@ package com.infomaniak.meet
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.View.GONE
 import android.view.inputmethod.EditorInfo
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
@@ -51,14 +52,29 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
+        val isCreate = intent.getBooleanExtra("isCreate", false)
+
+        if (isCreate) {
+            titleMain.setText(R.string.titleCreate)
+            roomNameLayout.visibility = GONE
+        }
+
         createButton.setOnClickListener {
-            checkUsername { userName ->
-                createRoom(userName)
+            if (isCreate) {
+                checkUsername { userName ->
+                    createRoom(userName)
+                }
+            } else {
+                checkRoomname { roomName ->
+                    idRoom = roomName
+                    checkUsername { userName ->
+                        createRoom(userName)
+                    }
+                }
             }
         }
 
-        val userName =
-            PreferenceManager.getDefaultSharedPreferences(this).getString("userName", null)
+        val userName = PreferenceManager.getDefaultSharedPreferences(this).getString("userName", null)
         userNameEdit.setText(userName)
 
         idRoom = (1..16).map { hashCharList.random() }.joinToString("")
@@ -67,7 +83,7 @@ class MainActivity : AppCompatActivity() {
                 "https" -> {
                     uri.path?.let { path ->
                         if (path.isNotBlank()) {
-                            idRoom = path.substring(1)
+                            roomNameEdit.setText(path.substring(1))
                             createButton.callOnClick()
                         }
                     }
@@ -75,7 +91,7 @@ class MainActivity : AppCompatActivity() {
                 else -> {
                     uri.host?.let { host ->
                         if (host.isNotBlank()) {
-                            idRoom = host
+                            roomNameEdit.setText(host)
                             createButton.callOnClick()
                         }
                     }
@@ -87,8 +103,16 @@ class MainActivity : AppCompatActivity() {
     override fun onPause() {
         super.onPause()
         val userName = userNameEdit.text.toString()
-        PreferenceManager.getDefaultSharedPreferences(this).edit().putString("userName", userName)
-            .apply()
+        PreferenceManager.getDefaultSharedPreferences(this).edit().putString("userName", userName).apply()
+    }
+
+    private fun checkRoomname(callback: (userName: String) -> Unit) {
+        val roomName = roomNameEdit.text.toString()
+        if (roomName.isNotEmpty()) {
+            callback(roomName)
+        } else {
+            roomNameLayout.error = getString(R.string.mandatoryField)
+        }
     }
 
     private fun checkUsername(callback: (userName: String) -> Unit) {
@@ -106,10 +130,7 @@ class MainActivity : AppCompatActivity() {
         launchRoom(roomName, userInfo)
     }
 
-    private fun launchRoom(
-        roomNameText: String,
-        userInfo: JitsiMeetUserInfo
-    ) {
+    private fun launchRoom(roomNameText: String, userInfo: JitsiMeetUserInfo) {
         val roomName = URLEncoder.encode(roomNameText, "UTF-8").replace("+", "%20")
         val options = JitsiMeetConferenceOptions.Builder()
             .setRoom(roomName)

@@ -1,5 +1,6 @@
 package com.infomaniak.meet
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_home.*
@@ -11,11 +12,15 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home)
 
         createButton.setOnClickListener {
-
+            val intent = Intent(this, MainActivity::class.java)
+            intent.putExtra("isCreate", true)
+            startActivity(intent)
         }
 
         joinButton.setOnClickListener {
-
+            val intent = Intent(this, MainActivity::class.java)
+            intent.putExtra("isCreate", false)
+            startActivity(intent)
         }
     }
 }
