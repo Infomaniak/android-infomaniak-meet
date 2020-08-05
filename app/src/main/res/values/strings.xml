@@ -1,15 +1,14 @@
 <resources>
-    <string name="app_name">kMeet</string>
-    <string name="userNameHint">Choisir un pseudo</string>
-    <string name="createButton">Créer la réunion</string>
-    <string name="acceptButton">Accepter l’invitation</string>
-    <string name="shareButton">Inviter des utilisateurs</string>
-    <string name="title">Créez ou rejoignez une réunion</string>
-    <string name="shareText">Cliquez sur le lien suivant pour rejoindre une conférence :\n%s</string>
-    <string name="joinRoomTitle">Rejoindre une réunion existante</string>
-    <string name="joinRoomAlertDescription">Cliquez sur un lien de partage ou écrivez l’identifiant de la réunion ici</string>
-    <string name="joinRoom">Rejoindre</string>
-    <string name="cancel">Annuler</string>
-    <string name="roomNameHint">Identifiant de la réunion</string>
+    <string name="app_name" translatable="false">kMeet</string>
+
+    <string name="createButton">Démarrer une nouvelle réunion</string>
+    <string name="hintMeetCode">Code ou lien de la réunion</string>
+    <string name="hintUserNameField">Nom affiché dans la réunion</string>
+    <string name="joinButton">Rejoindre avec un code ou un lien</string>
+    <string name="mandatoryField">Champs obligatoire</string>
     <string name="mandatoryUserName">Pseudo obligatoire</string>
+    <string name="startButton">Rejoindre la réunion</string>
+    <string name="titleCreate">Quel est votre nom ?</string>
+    <string name="titleJoin">Quelle réunion souhaitez-vous rejoindre ?</string>
+
 </resources>

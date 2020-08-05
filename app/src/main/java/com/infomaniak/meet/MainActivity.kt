@@ -1,18 +1,13 @@
 package com.infomaniak.meet
 
-import android.content.DialogInterface
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.widget.EditText
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ShareCompat
 import androidx.preference.PreferenceManager
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.join_alertview.view.*
 import org.jitsi.meet.sdk.JitsiMeet
 import org.jitsi.meet.sdk.JitsiMeetActivity
 import org.jitsi.meet.sdk.JitsiMeetConferenceOptions
@@ -28,7 +23,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var idRoom: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val defaultOptions = JitsiMeetConferenceOptions.Builder()
@@ -57,20 +51,10 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-        shareButton.setOnClickListener {
-            ShareCompat.IntentBuilder.from(this)
-                .setType("text/plain")
-                .setChooserTitle(R.string.app_name)
-                .setText(getString(R.string.shareText, serveur + idRoom))
-                .startChooser()
-        }
-
         createButton.setOnClickListener {
-            checkUsername { userName -> createRoom(userName) }
-        }
-
-        joinButton.setOnClickListener {
-            checkUsername { userName -> joinRoom(userName) }
+            checkUsername { userName ->
+                createRoom(userName)
+            }
         }
 
         val userName =
@@ -84,7 +68,7 @@ class MainActivity : AppCompatActivity() {
                     uri.path?.let { path ->
                         if (path.isNotBlank()) {
                             idRoom = path.substring(1)
-                            setAcceptButton()
+                            createButton.callOnClick()
                         }
                     }
                 }
@@ -92,17 +76,12 @@ class MainActivity : AppCompatActivity() {
                     uri.host?.let { host ->
                         if (host.isNotBlank()) {
                             idRoom = host
-                            setAcceptButton()
+                            createButton.callOnClick()
                         }
                     }
                 }
             }
         }
-    }
-
-    private fun setAcceptButton() {
-        createButton.text = getString(R.string.acceptButton)
-        createButton.callOnClick()
     }
 
     override fun onPause() {
@@ -119,24 +98,6 @@ class MainActivity : AppCompatActivity() {
         } else {
             userNameLayout.error = getString(R.string.mandatoryUserName)
         }
-    }
-
-    private fun joinRoom(userName: String) {
-        val view: View = layoutInflater.inflate(R.layout.join_alertview, null)
-
-        AlertDialog.Builder(this, R.style.DialogStyle)
-            .setTitle(R.string.joinRoomTitle)
-            .setMessage(R.string.joinRoomAlertDescription)
-            .setView(view)
-            .setNegativeButton(R.string.cancel, null)
-            .setPositiveButton(R.string.joinRoom) { _: DialogInterface?, _: Int ->
-                val roomName = view.roomNameEdit.text.toString()
-                if (roomName.length > 1) {
-                    createRoom(userName, roomName)
-                }
-            }
-            .setCancelable(false)
-            .show()
     }
 
     private fun createRoom(userName: String, roomName: String = idRoom) {

@@ -2,14 +2,14 @@
 <resources>
 
     <color name="primary">#3DBD86</color>
-    <color name="primaryDark">#0079CC</color>
+    <color name="primaryDark">@color/primary</color>
     <color name="accent">@color/infomaniak</color>
     <color name="primaryText">#828282</color>
     <color name="secondaryText">#9F9F9F</color>
 
-    <color name="cardViewBackground">@android:color/white</color>
-    <color name="background">#F2F5F6</color>
-    <color name="launchBackground">@color/infomaniak</color>
+    <color name="background">@android:color/white</color>
+    <color name="backgroundLightButton">#F1F1F1</color>
+    <color name="launchBackground">@color/primary</color>
     <color name="title">#333333</color>
 
     <color name="infomaniak">#0098FF</color>
