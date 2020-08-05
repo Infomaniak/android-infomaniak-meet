@@ -7,7 +7,7 @@ import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(R.style.AppTheme)
+        setTheme(R.style.AppThemeHome)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 

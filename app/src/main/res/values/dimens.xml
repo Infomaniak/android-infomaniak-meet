@@ -2,4 +2,5 @@
 <resources>
     <dimen name="radius">10dp</dimen>
     <dimen name="standardMargin">24dp</dimen>
+    <dimen name="standardMaxWidth">500dp</dimen>
 </resources>

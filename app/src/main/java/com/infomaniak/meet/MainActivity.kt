@@ -18,7 +18,7 @@ import java.net.URLEncoder
 
 class MainActivity : AppCompatActivity() {
 
-    private val serveur = "https://meet.infomaniak.com/"
+    private val serveur = "https://kmeet.infomaniak.com/"
     private val serverURL = URL(serveur)
     private val hashCharList = ('a'..'z').toList().toTypedArray()
     private lateinit var idRoom: String
@@ -109,7 +109,7 @@ class MainActivity : AppCompatActivity() {
     private fun checkRoomname(callback: (userName: String) -> Unit) {
         val roomName = roomNameEdit.text.toString()
         if (roomName.isNotEmpty()) {
-            callback(roomName)
+            callback(roomName.replace(serveur, ""))
         } else {
             roomNameLayout.error = getString(R.string.mandatoryField)
         }

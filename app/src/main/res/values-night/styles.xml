@@ -6,4 +6,8 @@
         <item name="android:navigationBarColor">@color/background</item>
     </style>
 
+    <style name="AppThemeHome" parent="AppTheme">
+        <item name="android:statusBarColor">@color/primary</item>
+    </style>
+
 </resources>
