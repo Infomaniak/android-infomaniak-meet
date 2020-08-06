@@ -1,3 +1,13 @@
 <resources>
-    <string name="mandatoryUserName">Apodo obligatorio</string>
+
+    <string name="createButton">Empezar una nueva reunión</string>
+    <string name="hintMeetCode">Código o enlace de la reunión</string>
+    <string name="hintUserNameField">Nombre que se muestra en la reunión</string>
+    <string name="joinButton">Unirse con un código o un enlace</string>
+    <string name="mandatoryField">Campo obligatorio</string>
+    <string name="mandatoryUserName">Pseudo-obligatorio</string>
+    <string name="startButton">Unirse a la reunión</string>
+    <string name="titleCreate">¿Cómo te llamas?</string>
+    <string name="titleJoin">¿A qué reunión deseas unirte?</string>
+
 </resources>

@@ -1,3 +1,13 @@
 <resources>
+
+    <string name="createButton">Neues Meeting starten</string>
+    <string name="hintMeetCode">Code oder Link des Meetings</string>
+    <string name="hintUserNameField">Im Meeting angezeigter Name</string>
+    <string name="joinButton">Mit Code oder Link beitreten</string>
+    <string name="mandatoryField">Pflichtfeld</string>
     <string name="mandatoryUserName">Pseudonym obligatorisch</string>
+    <string name="startButton">Dem Meeting beitreten</string>
+    <string name="titleCreate">Wie lautet Ihr Name ?</string>
+    <string name="titleJoin">Welchem Meeting möchten Sie beitreten ?</string>
+
 </resources>

@@ -1,3 +1,13 @@
 <resources>
+
+    <string name="createButton">Start a new meeting</string>
+    <string name="hintMeetCode">Meeting code or link</string>
+    <string name="hintUserNameField">Name displayed in the meeting</string>
+    <string name="joinButton">Join with a code or link</string>
+    <string name="mandatoryField">Required fields</string>
     <string name="mandatoryUserName">Mandatory nickname</string>
+    <string name="startButton">Join the meeting</string>
+    <string name="titleCreate">What’s your name ?</string>
+    <string name="titleJoin">Which meeting would you like to join ?</string>
+
 </resources>
