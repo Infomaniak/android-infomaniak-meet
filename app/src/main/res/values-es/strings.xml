@@ -1,5 +1,7 @@
 <resources>
 
+    <string name="codeDoesntExistError">El código que has introducido ya no es válido o no existe la reunión. Ponte en contacto con la persona que te ha invitado a unirte a la reunión.</string>
+    <string name="copyLinkExplanation">Copie/pegue el enlace o código que el organizador de la reunión le dio.</string>
     <string name="createButton">Empezar una nueva reunión</string>
     <string name="hintMeetCode">Código o enlace de la reunión</string>
     <string name="hintUserNameField">Nombre que se muestra en la reunión</string>

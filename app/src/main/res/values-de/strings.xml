@@ -1,5 +1,7 @@
 <resources>
 
+    <string name="codeDoesntExistError">Der von Ihnen eingegebene Code ist entweder nicht mehr gültig, oder das Meeting ist bereits beendet. Bitte wenden Sie sich an die Person, die Sie zu dem Meeting eingeladen hat.</string>
+    <string name="copyLinkExplanation">Kopieren Sie den Link oder Code, den der Organisator der Besprechung Ihnen gegeben hat, und fügen Sie ihn ein.</string>
     <string name="createButton">Neues Meeting starten</string>
     <string name="hintMeetCode">Code oder Link des Meetings</string>
     <string name="hintUserNameField">Im Meeting angezeigter Name</string>
@@ -9,5 +11,6 @@
     <string name="startButton">Dem Meeting beitreten</string>
     <string name="titleCreate">Wie lautet Ihr Name ?</string>
     <string name="titleJoin">Welchem Meeting möchten Sie beitreten ?</string>
+
 
 </resources>

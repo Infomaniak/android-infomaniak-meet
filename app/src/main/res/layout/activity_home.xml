@@ -11,12 +11,13 @@
         android:id="@+id/homeLogo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:src="@drawable/ic_logo_meet"
+        app:layout_constraintBottom_toTopOf="@id/footer"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintWidth_max="@dimen/standardMaxWidth"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.15"
+        app:layout_constraintWidth_max="@dimen/standardMaxWidth"
         app:layout_constraintWidth_percent="0.6" />
 
     <ImageView

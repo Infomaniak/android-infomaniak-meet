@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name" translatable="false">kMeet</string>
 
+    <string name="codeDoesntExistError">Le code que vous avez renseigné n’est plus valable ou la réunion n’existe plus. Veuillez contacter la personne qui vous a invité à rejoindre la réunion.</string>
+    <string name="copyLinkExplanation">Copiez/coller le lien ou le code que l’organisateur de la réunion vous a donné.</string>
     <string name="createButton">Démarrer une nouvelle réunion</string>
     <string name="hintMeetCode">Code ou lien de la réunion</string>
     <string name="hintUserNameField">Nom affiché dans la réunion</string>

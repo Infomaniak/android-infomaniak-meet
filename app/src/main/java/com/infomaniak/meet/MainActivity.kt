@@ -1,5 +1,6 @@
 package com.infomaniak.meet
 
+import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -7,8 +8,18 @@ import android.view.View.GONE
 import android.view.inputmethod.EditorInfo
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import androidx.preference.PreferenceManager
+import com.github.razir.progressbutton.hideProgress
+import com.github.razir.progressbutton.showProgress
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import okhttp3.OkHttpClient
+import okhttp3.Request
 import org.jitsi.meet.sdk.JitsiMeet
 import org.jitsi.meet.sdk.JitsiMeetActivity
 import org.jitsi.meet.sdk.JitsiMeetConferenceOptions
@@ -57,6 +68,7 @@ class MainActivity : AppCompatActivity() {
         if (isCreate) {
             titleMain.setText(R.string.titleCreate)
             roomNameLayout.visibility = GONE
+            createButton.setText(R.string.createButton)
         }
 
         createButton.setOnClickListener {
@@ -107,9 +119,21 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun checkRoomname(callback: (userName: String) -> Unit) {
-        val roomName = roomNameEdit.text.toString()
+        var roomName = roomNameEdit.text.toString()
         if (roomName.isNotEmpty()) {
-            callback(roomName.replace(serveur, ""))
+            val regex = "^(\\d{3}-\\d{4}-\\d{3}|\\d{10})$".toRegex()
+            if (regex.containsMatchIn(roomName)) {
+                lifecycleScope.launch {
+                    roomName = getRoomName(roomName.replace("-", "")) ?: ""
+                    if (roomName.isEmpty()) {
+                        roomNameEdit.error = getString(R.string.codeDoesntExistError)
+                    } else {
+                        callback(roomName.replace(serveur, ""))
+                    }
+                }
+            } else {
+                callback(roomName.replace(serveur, ""))
+            }
         } else {
             roomNameLayout.error = getString(R.string.mandatoryField)
         }
@@ -138,6 +162,30 @@ class MainActivity : AppCompatActivity() {
             .build()
         JitsiMeetActivity.launch(this, options)
         finish()
+    }
+
+    suspend fun getRoomName(code: String): String? {
+        createButton.isClickable = false
+        createButton.showProgress {
+            progressColor = Color.WHITE
+        }
+        var result: ApiResponse<CodeRoomName>? = null
+        withContext(Dispatchers.IO) {
+            val request = Request.Builder()
+                .url("https://welcome.infomaniak.com/api/components/meet/conference/${code}")
+                .get()
+                .build()
+
+            val response = OkHttpClient.Builder().build().newCall(request).execute()
+            val bodyResponse = response.body()?.string()
+
+            result =
+                Gson().fromJson<ApiResponse<CodeRoomName>>(bodyResponse, object : TypeToken<ApiResponse<CodeRoomName>>() {}.type)
+        }
+
+        createButton?.isClickable = true
+        createButton?.hideProgress(R.string.startButton)
+        return result?.data?.name
     }
 
     private fun EditText.onDone(callback: () -> Unit) {
