@@ -9,8 +9,7 @@
     <string name="mandatoryField">Required fields</string>
     <string name="mandatoryUserName">Mandatory nickname</string>
     <string name="startButton">Join the meeting</string>
-    <string name="titleCreate">What’s your name ?</string>
-    <string name="titleJoin">Which meeting would you like to join ?</string>
-
+    <string name="titleCreate">What’s your name?</string>
+    <string name="titleJoin">Which meeting would you like to join?</string>
 
 </resources>

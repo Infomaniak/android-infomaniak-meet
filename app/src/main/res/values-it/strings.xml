@@ -9,8 +9,7 @@
     <string name="mandatoryField">Campo obbligatorio</string>
     <string name="mandatoryUserName">Nome utente obbligatorio</string>
     <string name="startButton">Unisciti alla riunione</string>
-    <string name="titleCreate">Come ti chiami ?</string>
-    <string name="titleJoin">A quale riunione vuoi unirti ?</string>
-
+    <string name="titleCreate">Come ti chiami?</string>
+    <string name="titleJoin">A quale riunione vuoi unirti?</string>
 
 </resources>

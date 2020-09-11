@@ -1,2 +1,2 @@
-rootProject.name='Meet'
+rootProject.name='kMeet'
 include ':app'

@@ -77,7 +77,7 @@ class MainActivity : AppCompatActivity() {
                     createRoom(userName)
                 }
             } else {
-                checkRoomname { roomName ->
+                checkRoomName { roomName ->
                     idRoom = roomName
                     checkUsername { userName ->
                         createRoom(userName)
@@ -118,7 +118,7 @@ class MainActivity : AppCompatActivity() {
         PreferenceManager.getDefaultSharedPreferences(this).edit().putString("userName", userName).apply()
     }
 
-    private fun checkRoomname(callback: (userName: String) -> Unit) {
+    private fun checkRoomName(callback: (roomName: String) -> Unit) {
         var roomName = roomNameEdit.text.toString()
         if (roomName.isNotEmpty()) {
             val regex = "^(\\d{3}-\\d{4}-\\d{3}|\\d{10})$".toRegex()
@@ -128,7 +128,7 @@ class MainActivity : AppCompatActivity() {
                     if (roomName.isEmpty()) {
                         roomNameEdit.error = getString(R.string.codeDoesntExistError)
                     } else {
-                        callback(roomName.replace(serveur, ""))
+                        callback(roomName)
                     }
                 }
             } else {

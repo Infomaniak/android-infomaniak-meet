@@ -9,8 +9,7 @@
     <string name="mandatoryField">Pflichtfeld</string>
     <string name="mandatoryUserName">Pseudonym obligatorisch</string>
     <string name="startButton">Dem Meeting beitreten</string>
-    <string name="titleCreate">Wie lautet Ihr Name ?</string>
-    <string name="titleJoin">Welchem Meeting möchten Sie beitreten ?</string>
-
+    <string name="titleCreate">Wie lautet Ihr Name?</string>
+    <string name="titleJoin">Welchem Meeting möchten Sie beitreten?</string>
 
 </resources>
