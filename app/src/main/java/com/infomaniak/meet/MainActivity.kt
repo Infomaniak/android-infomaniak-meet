@@ -96,7 +96,6 @@ class MainActivity : AppCompatActivity() {
                     uri.path?.let { path ->
                         if (path.isNotBlank()) {
                             roomNameEdit.setText(path.substring(1))
-                            createButton.callOnClick()
                         }
                     }
                 }
@@ -104,7 +103,6 @@ class MainActivity : AppCompatActivity() {
                     uri.host?.let { host ->
                         if (host.isNotBlank()) {
                             roomNameEdit.setText(host)
-                            createButton.callOnClick()
                         }
                     }
                 }
