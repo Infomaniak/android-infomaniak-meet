@@ -40,6 +40,9 @@ class MainActivity : AppCompatActivity() {
         val defaultOptions = JitsiMeetConferenceOptions.Builder()
             .setServerURL(serverURL)
             .setWelcomePageEnabled(false)
+            .setFeatureFlag("recording.enabled", false)
+            .setFeatureFlag("video-share.enabled", false)
+            .setFeatureFlag("live-streaming.enabled", false)
             .build()
         JitsiMeet.setDefaultConferenceOptions(defaultOptions)
 
