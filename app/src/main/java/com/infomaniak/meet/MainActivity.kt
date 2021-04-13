@@ -1,6 +1,7 @@
 package com.infomaniak.meet
 
 import android.graphics.Color
+import android.net.Uri
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -29,8 +30,7 @@ import java.net.URLEncoder
 
 class MainActivity : AppCompatActivity() {
 
-    private val serveur = "https://kmeet.infomaniak.com/"
-    private val serverURL = URL(serveur)
+    private var serverURL = URL("https://kmeet.infomaniak.com/")
     private val hashCharList = ('a'..'z').toList().toTypedArray()
     private lateinit var idRoom: String
 
@@ -40,7 +40,6 @@ class MainActivity : AppCompatActivity() {
         val defaultOptions = JitsiMeetConferenceOptions.Builder()
             .setServerURL(serverURL)
             .setWelcomePageEnabled(false)
-            .setFeatureFlag("recording.enabled", false)
             .setFeatureFlag("video-share.enabled", false)
             .setFeatureFlag("live-streaming.enabled", false)
             .build()
@@ -103,11 +102,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
                 else -> {
-                    uri.host?.let { host ->
-                        if (host.isNotBlank()) {
-                            roomNameEdit.setText(host)
-                        }
-                    }
+                    roomNameEdit.setText(setServerURLFromUri(uri))
                 }
             }
         }
@@ -125,7 +120,11 @@ class MainActivity : AppCompatActivity() {
             val regex = "^(\\d{3}-\\d{4}-\\d{3}|\\d{10})$".toRegex()
             if (regex.containsMatchIn(roomName)) {
                 lifecycleScope.launch {
-                    roomName = getRoomName(roomName.replace("-", "")) ?: ""
+                    val roomCredential = getRoomCredential(roomName.replace("-", ""))
+                    roomCredential?.hostname?.let {
+                        serverURL = URL("https://$it/")
+                    }
+                    roomName = roomCredential?.name ?: ""
                     if (roomName.isEmpty()) {
                         roomNameEdit.error = getString(R.string.codeDoesntExistError)
                     } else {
@@ -133,7 +132,12 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             } else {
-                callback(roomName.replace(serveur, ""))
+                val uri = Uri.parse(roomName)
+                if (uri.scheme == null) {
+                    callback(URLEncoder.encode(roomName, "UTF-8").replace("+", "%20"))
+                } else {
+                    callback(setServerURLFromUri(uri))
+                }
             }
         } else {
             roomNameLayout.error = getString(R.string.mandatoryField)
@@ -149,44 +153,56 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun createRoom(userName: String, roomName: String = idRoom) {
+    private fun createRoom(userName: String) {
         val userInfo = JitsiMeetUserInfo()
         userInfo.displayName = userName
-        launchRoom(roomName, userInfo)
+        launchRoom(idRoom, userInfo)
     }
 
-    private fun launchRoom(roomNameText: String, userInfo: JitsiMeetUserInfo) {
-        val roomName = URLEncoder.encode(roomNameText, "UTF-8").replace("+", "%20")
+    private fun launchRoom(roomName: String, userInfo: JitsiMeetUserInfo) {
         val options = JitsiMeetConferenceOptions.Builder()
             .setRoom(roomName)
+            .setServerURL(serverURL)
             .setUserInfo(userInfo)
             .build()
         JitsiMeetActivity.launch(this, options)
         finish()
     }
 
-    suspend fun getRoomName(code: String): String? {
+    private fun setServerURLFromUri(uri: Uri): String {
+        serverURL = URL("https://${uri.host}/")
+        return uri.toString().replace("${uri.scheme}://${uri.host}/", "")
+    }
+
+    private suspend fun getRoomCredential(code: String): CodeRoomCredential? {
         createButton.isClickable = false
         createButton.showProgress {
             progressColor = Color.WHITE
         }
-        var result: ApiResponse<CodeRoomName>? = null
+        var result: ApiResponse<CodeRoomCredential>? = null
         withContext(Dispatchers.IO) {
-            val request = Request.Builder()
-                .url("https://welcome.infomaniak.com/api/components/meet/conference/${code}")
-                .get()
-                .build()
+            try {
+                val request = Request.Builder()
+                    .url(getCodeRoomCredential(code))
+                    .get()
+                    .build()
 
-            val response = OkHttpClient.Builder().build().newCall(request).execute()
-            val bodyResponse = response.body()?.string()
+                val response = OkHttpClient.Builder().build().newCall(request).execute()
+                val bodyResponse = response.body()?.string()
 
-            result =
-                Gson().fromJson<ApiResponse<CodeRoomName>>(bodyResponse, object : TypeToken<ApiResponse<CodeRoomName>>() {}.type)
+                result =
+                    Gson().fromJson<ApiResponse<CodeRoomCredential>>(
+                        bodyResponse,
+                        object : TypeToken<ApiResponse<CodeRoomCredential>>() {}.type
+                    )
+            } catch (exception: Exception) {
+                exception.printStackTrace()
+            }
         }
 
         createButton?.isClickable = true
         createButton?.hideProgress(R.string.startButton)
-        return result?.data?.name
+        return result?.data
     }
 
     private fun EditText.onDone(callback: () -> Unit) {
@@ -197,5 +213,11 @@ class MainActivity : AppCompatActivity() {
             }
             false
         }
+    }
+
+    companion object {
+        private const val kmeetApi = "https://welcome.infomaniak.com/api/components/"
+
+        fun getCodeRoomCredential(conferenceName: String) = "${kmeetApi}meet/conference/code/${conferenceName}"
     }
 }

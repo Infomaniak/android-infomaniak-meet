@@ -29,10 +29,6 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:host="meet.infomaniak.com"
-                    android:scheme="https" />
-
-                <data
                     android:host="kmeet.infomaniak.com"
                     android:scheme="https" />
             </intent-filter>
