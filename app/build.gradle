@@ -41,7 +41,10 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.6'
     implementation 'com.github.razir.progressbutton:progressbutton:2.1.0'
 
-    implementation('org.jitsi.react:jitsi-meet-sdk:3.4.0') {
+    implementation('org.jitsi.react:jitsi-meet-sdk:3.5.0')  {
+        exclude group: 'com.google.firebase'
+        exclude group: 'com.google.android.gms'
+        exclude group: 'com.android.installreferrer'
         transitive = true
     }
 }
