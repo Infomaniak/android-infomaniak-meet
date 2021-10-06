@@ -42,6 +42,7 @@ class MainActivity : AppCompatActivity() {
             .setVideoMuted(true)
             .setWelcomePageEnabled(false)
             .setFeatureFlag("live-streaming.enabled", false)
+            .setFeatureFlag("reactions.enabled", false)
             .setFeatureFlag("recording.enabled", false)
             .setFeatureFlag("video-share.enabled", false)
             .build()
