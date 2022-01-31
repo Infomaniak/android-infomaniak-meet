@@ -1,16 +1,16 @@
 <resources>
     <string name="app_name" translatable="false">kMeet</string>
 
-    <string name="codeDoesntExistError">Le code que vous avez renseigné n’est plus valable ou la réunion n’existe plus. Veuillez contacter la personne qui vous a invité à rejoindre la réunion.</string>
-    <string name="copyLinkExplanation">Copiez/coller le lien ou le code que l’organisateur de la réunion vous a donné.</string>
-    <string name="createButton">Démarrer une nouvelle réunion</string>
-    <string name="hintMeetCode">Code ou lien de la réunion</string>
-    <string name="hintUserNameField">Nom affiché dans la réunion</string>
-    <string name="joinButton">Rejoindre avec un code ou un lien</string>
-    <string name="mandatoryField">Champs obligatoire</string>
-    <string name="mandatoryUserName">Pseudo obligatoire</string>
-    <string name="startButton">Rejoindre la réunion</string>
-    <string name="titleCreate">Quel est votre nom ?</string>
-    <string name="titleJoin">Quelle réunion souhaitez-vous rejoindre ?</string>
+    <string name="codeDoesntExistError">The code you’ve entered is no longer valid or the meeting no longer exists. Please contact the person who invited you to join the meeting.</string>
+    <string name="copyLinkExplanation">Copy/paste the link or code given to you by the meeting organizer.</string>
+    <string name="createButton">Start a new meeting</string>
+    <string name="hintMeetCode">Meeting code or link</string>
+    <string name="hintUserNameField">Name displayed in the meeting</string>
+    <string name="joinButton">Join with a code or link</string>
+    <string name="mandatoryField">Required fields</string>
+    <string name="mandatoryUserName">Mandatory nickname</string>
+    <string name="startButton">Join the meeting</string>
+    <string name="titleCreate">What’s your name?</string>
+    <string name="titleJoin">Which meeting would you like to join?</string>
 
 </resources>
