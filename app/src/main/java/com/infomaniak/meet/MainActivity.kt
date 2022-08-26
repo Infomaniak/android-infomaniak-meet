@@ -191,7 +191,7 @@ class MainActivity : AppCompatActivity() {
                     .build()
 
                 val response = OkHttpClient.Builder().build().newCall(request).execute()
-                val bodyResponse = response.body()?.string()
+                val bodyResponse = response.body?.string()
 
                 result =
                     Gson().fromJson<ApiResponse<CodeRoomCredential>>(
@@ -213,8 +213,9 @@ class MainActivity : AppCompatActivity() {
             if (actionId == EditorInfo.IME_ACTION_DONE) {
                 callback.invoke()
                 true
+            } else {
+                false
             }
-            false
         }
     }
 
