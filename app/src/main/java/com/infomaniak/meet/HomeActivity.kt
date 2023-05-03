@@ -3,22 +3,24 @@ package com.infomaniak.meet
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_home.*
+import com.infomaniak.meet.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
+
+    private val binding by lazy { ActivityHomeBinding.inflate(layoutInflater) }
+    override fun onCreate(savedInstanceState: Bundle?) = with(binding) {
         setTheme(R.style.AppThemeHome)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        setContentView(root)
 
         createButton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this@HomeActivity, MainActivity::class.java)
             intent.putExtra("isCreate", true)
             startActivity(intent)
         }
 
         joinButton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this@HomeActivity, MainActivity::class.java)
             intent.putExtra("isCreate", false)
             startActivity(intent)
         }

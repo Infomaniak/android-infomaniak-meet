@@ -15,7 +15,7 @@ import com.github.razir.progressbutton.hideProgress
 import com.github.razir.progressbutton.showProgress
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import kotlinx.android.synthetic.main.activity_main.*
+import com.infomaniak.meet.databinding.ActivityMainBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -30,13 +30,15 @@ import java.net.URLEncoder
 
 class MainActivity : AppCompatActivity() {
 
+    private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+
     private var serverURL = URL("https://kmeet.infomaniak.com/")
     private val hashCharList = ('a'..'z').toList().toTypedArray()
     private lateinit var idRoom: String
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?): Unit = with(binding) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(root)
         val defaultOptions = JitsiMeetConferenceOptions.Builder()
             .setServerURL(serverURL)
             .setVideoMuted(true)
@@ -91,7 +93,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        val userName = PreferenceManager.getDefaultSharedPreferences(this).getString("userName", null)
+        val userName = PreferenceManager.getDefaultSharedPreferences(this@MainActivity).getString("userName", null)
         userNameEdit.setText(userName)
 
         idRoom = (1..16).map { hashCharList.random() }.joinToString("")
@@ -104,6 +106,7 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
                 }
+
                 else -> {
                     roomNameEdit.setText(setServerURLFromUri(uri))
                 }
@@ -113,11 +116,11 @@ class MainActivity : AppCompatActivity() {
 
     override fun onPause() {
         super.onPause()
-        val userName = userNameEdit.text.toString()
+        val userName = binding.userNameEdit.text.toString()
         PreferenceManager.getDefaultSharedPreferences(this).edit().putString("userName", userName).apply()
     }
 
-    private fun checkRoomName(callback: (roomName: String) -> Unit) {
+    private fun checkRoomName(callback: (roomName: String) -> Unit) = with(binding) {
         var roomName = roomNameEdit.text.toString()
         if (roomName.isNotEmpty()) {
             val regex = "^(\\d{3}-\\d{4}-\\d{3}|\\d{10})$".toRegex()
@@ -147,7 +150,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun checkUsername(callback: (userName: String) -> Unit) {
+    private fun checkUsername(callback: (userName: String) -> Unit) = with(binding) {
         val userName = userNameEdit.text.toString()
         if (userName.length > 1) {
             callback(userName)
@@ -177,9 +180,9 @@ class MainActivity : AppCompatActivity() {
         return uri.toString().replace("${uri.scheme}://${uri.host}/", "")
     }
 
-    private suspend fun getRoomCredential(code: String): CodeRoomCredential? {
-        createButton.isClickable = false
-        createButton.showProgress {
+    private suspend fun getRoomCredential(code: String): CodeRoomCredential? = with(binding.createButton) {
+        isClickable = false
+        showProgress {
             progressColor = Color.WHITE
         }
         var result: ApiResponse<CodeRoomCredential>? = null
@@ -203,8 +206,8 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        createButton?.isClickable = true
-        createButton?.hideProgress(R.string.startButton)
+        isClickable = true
+        hideProgress(R.string.startButton)
         return result?.data
     }
 
