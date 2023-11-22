@@ -1,6 +1,6 @@
 package com.infomaniak.meet
 
-import kotlinx.android.parcel.RawValue
+import kotlinx.parcelize.RawValue
 
 data class ApiResponse<T>(
     val result: Status = Status.unknown,
