@@ -5,12 +5,12 @@ apply plugin: 'kotlin-parcelize'
 android {
     namespace 'com.infomaniak.meet'
 
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.infomaniak.meet"
         minSdkVersion 24
-        targetSdkVersion 33
+        targetSdkVersion 34
         versionCode 22
         versionName "2.6.2"
 
