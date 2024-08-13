@@ -43,13 +43,11 @@ class MainActivity : AppCompatActivity() {
             .setServerURL(serverURL)
             .setVideoMuted(true)
             .setFeatureFlag("live-streaming.enabled", false)
-            .setFeatureFlag("prejoinpage.enabled", false)
             .setFeatureFlag("reactions.enabled", false)
             .setFeatureFlag("recording.enabled", false)
             .setFeatureFlag("settings.enabled", false)
             .setFeatureFlag("unsaferoomwarning.enabled", false)
             .setFeatureFlag("video-share.enabled", false)
-            .setFeatureFlag("welcomepage.enable", false)
             .build()
         JitsiMeet.setDefaultConferenceOptions(defaultOptions)
 

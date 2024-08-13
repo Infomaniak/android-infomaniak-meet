@@ -49,8 +49,7 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.11.0'
     implementation 'com.github.razir.progressbutton:progressbutton:2.1.0'
 
-    //TODO Update to 9.2.2 when https://github.com/jitsi/jitsi-meet/issues/14794 is fixed
-    implementation('org.jitsi.react:jitsi-meet-sdk:9.2.1') {
+    implementation('org.jitsi.react:jitsi-meet-sdk:10.0.0') {
         exclude group: 'com.google.firebase'
         exclude group: 'com.android.installreferrer'
     }
