@@ -1,4 +1,5 @@
 # Infomaniak Meet
+
 Infomaniak Meet is a privacy-friendly videoconferencing solution for all your exchanges.
 
 # Mobile apps

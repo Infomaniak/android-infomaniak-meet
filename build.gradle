@@ -4,14 +4,26 @@ buildscript {
     ext.kotlin_version = '1.9.24'
     ext.java_version = JavaVersion.VERSION_17
 
+    ext {
+        coreMinSdk = 21
+        coreTargetSdk = 34
+        javaVersion = JavaVersion.VERSION_17
+    }
+
     repositories {
         google()
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.5.2'
+        classpath 'androidx.navigation:navigation-safe-args-gradle-plugin:2.7.7'
+        classpath 'com.android.tools.build:gradle:8.6.0-rc01'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
+}
+
+plugins {
+    id 'org.jetbrains.kotlin.plugin.serialization' version "$kotlin_version" apply false
+    id 'com.google.devtools.ksp' version '1.9.22-1.0.16' apply false
 }
 
 allprojects {
@@ -23,6 +35,6 @@ allprojects {
     }
 }
 
-task clean(type: Delete) {
+tasks.register('clean', Delete) {
     delete rootProject.buildDir
 }
