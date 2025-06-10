@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-parcelize'
+apply plugin: 'kotlinx-serialization'
 
 android {
     namespace 'com.infomaniak.meet'
@@ -35,6 +36,9 @@ android {
 }
 
 dependencies {
+    implementation project(":Core")
+    implementation project(":Core:Legacy")
+
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1'
