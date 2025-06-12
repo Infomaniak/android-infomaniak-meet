@@ -18,6 +18,14 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    flavorDimensions += "distribution"
+    productFlavors {
+        create("standard") {
+            isDefault = true
+        }
+        create("fdroid")
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -38,6 +46,7 @@ android {
 dependencies {
     implementation project(":Core")
     implementation project(":Core:Legacy")
+    implementation project(":Core:Legacy:Stores")
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
