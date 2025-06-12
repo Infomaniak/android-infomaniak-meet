@@ -22,4 +22,5 @@ dependencyResolutionManagement {
 rootProject.name='kMeet'
 
 include ':app',
-        ':Core:Legacy'
+        ':Core:Legacy',
+        ':Core:Legacy:Stores'
