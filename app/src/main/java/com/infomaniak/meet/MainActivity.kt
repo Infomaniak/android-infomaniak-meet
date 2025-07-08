@@ -6,7 +6,6 @@ import android.net.Uri
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.view.View
 import android.view.View.GONE
 import android.view.inputmethod.EditorInfo
 import android.widget.EditText
