@@ -3,7 +3,9 @@ package com.infomaniak.meet
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.updatePadding
 import com.infomaniak.meet.databinding.ActivityHomeBinding
+import com.infomaniak.meet.utils.onApplyWindowInsetsListener
 
 class HomeActivity : AppCompatActivity() {
 
@@ -23,6 +25,10 @@ class HomeActivity : AppCompatActivity() {
             val intent = Intent(this@HomeActivity, MainActivity::class.java)
             intent.putExtra("isCreate", false)
             startActivity(intent)
+        }
+
+        footer.onApplyWindowInsetsListener { view, insets, _ ->
+            view.updatePadding(bottom = insets.bottom)
         }
     }
 }
