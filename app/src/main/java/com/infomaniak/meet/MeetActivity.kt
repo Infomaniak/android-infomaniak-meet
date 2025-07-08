@@ -67,7 +67,7 @@ class MeetActivity : AppCompatActivity(), JitsiMeetActivityInterface {
     }
 
     private fun JitsiMeetView.handleEdgeToEdge() {
-        onApplyWindowInsetsListener { view, insets, navBarVisible ->
+        onApplyWindowInsetsListener { _, insets, navBarVisible ->
             updatePadding(bottom = if (navBarVisible) insets.bottom else 0)
         }
 
