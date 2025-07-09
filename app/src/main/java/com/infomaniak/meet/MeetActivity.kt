@@ -68,7 +68,10 @@ class MeetActivity : AppCompatActivity(), JitsiMeetActivityInterface {
 
     private fun JitsiMeetView.handleEdgeToEdge() {
         onApplyWindowInsetsListener { _, insets, navBarVisible ->
-            updatePadding(bottom = if (navBarVisible) insets.bottom else 0)
+            updatePadding(
+                top = insets.top,
+                bottom = if (navBarVisible) insets.bottom else 0,
+            )
         }
 
         if (SDK_INT >= 29) window.isNavigationBarContrastEnforced = false
