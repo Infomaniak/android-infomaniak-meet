@@ -66,6 +66,10 @@ class MeetActivity : AppCompatActivity(), JitsiMeetActivityInterface {
         JitsiMeetActivityDelegate.requestPermissions(this, permissions, requestCode, grantResults)
     }
 
+    override fun onUserLeaveHint() {
+        binding.jitsiMeetView.enterPictureInPicture()
+    }
+
     private fun JitsiMeetView.handleEdgeToEdge() {
         onApplyWindowInsetsListener { _, insets, navBarVisible ->
             updatePadding(
@@ -94,10 +98,12 @@ class MeetActivity : AppCompatActivity(), JitsiMeetActivityInterface {
                 BroadcastEvent.Type.CONFERENCE_JOINED -> {
                     JitsiMeetOngoingConferenceService.launch(this, event.data)
                 }
+
                 BroadcastEvent.Type.READY_TO_CLOSE -> {
                     binding.jitsiMeetView.abort()
                     finish()
                 }
+
                 else -> Unit
             }
         }

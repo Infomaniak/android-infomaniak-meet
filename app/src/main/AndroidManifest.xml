@@ -40,7 +40,14 @@
                 <data android:scheme="kmeet" />
             </intent-filter>
         </activity>
-        <activity android:name=".MeetActivity"/>
+        <activity
+            android:name=".MeetActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+            android:launchMode="singleTask"
+            android:resizeableActivity="true"
+            android:supportsPictureInPicture="true"
+            android:theme="@style/JitsiMeetActivityStyle"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>
