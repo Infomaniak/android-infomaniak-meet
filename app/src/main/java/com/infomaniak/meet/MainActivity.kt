@@ -1,5 +1,6 @@
 package com.infomaniak.meet
 
+import android.content.Intent
 import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
@@ -15,6 +16,11 @@ import com.github.razir.progressbutton.hideProgress
 import com.github.razir.progressbutton.showProgress
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import com.infomaniak.meet.MeetActivity.Companion.INTENT_EXTRA_AVATAR_URL_KEY
+import com.infomaniak.meet.MeetActivity.Companion.INTENT_EXTRA_DISPLAY_NAME_KEY
+import com.infomaniak.meet.MeetActivity.Companion.INTENT_EXTRA_EMAIL_KEY
+import com.infomaniak.meet.MeetActivity.Companion.INTENT_EXTRA_ROOM_NAME_KEY
+import com.infomaniak.meet.MeetActivity.Companion.INTENT_EXTRA_SERVER_URL_KEY
 import com.infomaniak.meet.databinding.ActivityMainBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -22,7 +28,6 @@ import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import org.jitsi.meet.sdk.JitsiMeet
-import org.jitsi.meet.sdk.JitsiMeetActivity
 import org.jitsi.meet.sdk.JitsiMeetConferenceOptions
 import org.jitsi.meet.sdk.JitsiMeetUserInfo
 import java.net.URL
@@ -167,12 +172,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun launchRoom(roomName: String, userInfo: JitsiMeetUserInfo) {
-        val options = JitsiMeetConferenceOptions.Builder()
-            .setRoom(roomName)
-            .setServerURL(serverURL)
-            .setUserInfo(userInfo)
-            .build()
-        JitsiMeetActivity.launch(this, options)
+        val intent = Intent(this, MeetActivity::class.java)
+        intent.putExtra(INTENT_EXTRA_ROOM_NAME_KEY, roomName)
+        intent.putExtra(INTENT_EXTRA_SERVER_URL_KEY, serverURL)
+        intent.putExtra(INTENT_EXTRA_DISPLAY_NAME_KEY, userInfo.displayName)
+        intent.putExtra(INTENT_EXTRA_EMAIL_KEY, userInfo.email)
+        intent.putExtra(INTENT_EXTRA_AVATAR_URL_KEY, userInfo.avatar)
+        startActivity(intent)
         finish()
     }
 
