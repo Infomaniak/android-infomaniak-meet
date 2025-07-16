@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-parcelize'
+apply plugin: 'kotlinx-serialization'
 
 android {
     namespace 'com.infomaniak.meet'
@@ -15,6 +16,14 @@ android {
         versionName "2.6.4"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    flavorDimensions += "distribution"
+    productFlavors {
+        create("standard") {
+            isDefault = true
+        }
+        create("fdroid")
     }
 
     buildTypes {
@@ -35,6 +44,10 @@ android {
 }
 
 dependencies {
+    implementation project(":Core")
+    implementation project(":Core:Legacy")
+    implementation project(":Core:Legacy:Stores")
+
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1'

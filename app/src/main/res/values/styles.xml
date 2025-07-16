@@ -54,4 +54,18 @@
         <item name="android:textColor">@color/title</item>
     </style>
 
+    <style name="AppTheme.RequiredUpdate">
+        <item name="illustration">@drawable/illu_update_required</item>
+        <item name="titleStyle">@style/H2</item>
+        <item name="descriptionStyle">@color/secondaryText</item>
+    </style>
+
+    <!--Text-->
+
+    <style name="H2">
+        <item name="android:fontFamily">@font/suisseintl_semibold</item>
+        <item name="android:textColor">@color/title</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
 </resources>
