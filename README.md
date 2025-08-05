@@ -5,11 +5,16 @@ Infomaniak Meet is a privacy-friendly videoconferencing solution for all your ex
 
 * [Android](https://github.com/Infomaniak/android-infomaniak-meet)
 
-[<img src="img/google-play-badge.png" height="50">](https://play.google.com/store/apps/details?id=com.infomaniak.meet)
+[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
+     alt="Get it on F-Droid"
+     height="70">](https://f-droid.org/packages/com.infomaniak.meet/)
+[<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png"
+     alt="Get it on Google Play"
+     height="70">](https://play.google.com/store/apps/details?id=com.infomaniak.meet)
 
 * [iOS](https://github.com/Infomaniak/ios-infomaniak-meet)
 
-[<img src="img/appstore-badge.png" height="50">](https://itunes.apple.com/us/app/infomaniak-meet/id1505940319)
+[<img src="img/appstore-badge.png" alt="Get it on the AppStore" height="50">](https://itunes.apple.com/us/app/infomaniak-meet/id1505940319)
 
 # Jitsi SDK
 
