@@ -3,11 +3,12 @@ package com.infomaniak.meet
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.updatePadding
+import com.infomaniak.lib.core.InfomaniakCore
 import com.infomaniak.lib.core.utils.SnackbarUtils.showSnackbar
+import com.infomaniak.lib.stores.StoreUtils.checkUpdateIsRequired
 import com.infomaniak.lib.stores.updatemanagers.InAppUpdateManager
 import com.infomaniak.meet.databinding.ActivityHomeBinding
-import com.infomaniak.lib.stores.StoreUtils.checkUpdateIsRequired
-import androidx.core.view.updatePadding
 import com.infomaniak.meet.utils.onApplyWindowInsetsListener
 
 class HomeActivity : AppCompatActivity() {
@@ -26,7 +27,9 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(root)
 
-        this@HomeActivity.checkUpdateIsRequired(BuildConfig.APPLICATION_ID, BuildConfig.VERSION_NAME, BuildConfig.VERSION_CODE, R.style.AppTheme)
+        configureInfomaniakCore()
+
+        checkUpdateIsRequired(BuildConfig.APPLICATION_ID, BuildConfig.VERSION_NAME, BuildConfig.VERSION_CODE, R.style.AppTheme)
 
         initAppUpdateManager()
 
@@ -44,6 +47,18 @@ class HomeActivity : AppCompatActivity() {
 
         footer.onApplyWindowInsetsListener { view, insets, _ ->
             view.updatePadding(bottom = insets.bottom)
+        }
+    }
+
+    private fun configureInfomaniakCore() {
+        // Legacy configuration
+        InfomaniakCore.apply {
+            init(
+                appId = BuildConfig.APPLICATION_ID,
+                appVersionCode = BuildConfig.VERSION_CODE,
+                appVersionName = BuildConfig.VERSION_NAME,
+                clientId = "", // For CrossAppLogin but we can't log in so leaving this empty for kMeet
+            )
         }
     }
 }
