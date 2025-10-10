@@ -59,14 +59,15 @@ class MeetActivity : AppCompatActivity(), JitsiMeetActivityInterface {
     }
 
     override fun requestPermissions(
-        permissions: Array<String?>,
+        permissions: Array<String>,
         requestCode: Int,
-        grantResults: PermissionListener,
+        listener: PermissionListener?
     ) {
-        JitsiMeetActivityDelegate.requestPermissions(this, permissions, requestCode, grantResults)
+        JitsiMeetActivityDelegate.requestPermissions(this, permissions, requestCode, listener)
     }
 
     override fun onUserLeaveHint() {
+        super.onUserLeaveHint()
         binding.jitsiMeetView.enterPictureInPicture()
     }
 
