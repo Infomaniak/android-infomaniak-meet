@@ -3,7 +3,4 @@
     <style name="AppTheme" parent="AppThemeBase">
         <item name="colorOnSurface">@android:color/white</item>
     </style>
-d
-
-
 </resources>
