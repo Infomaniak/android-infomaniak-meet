@@ -1,13 +1,15 @@
 <resources>
 
-    <style name="AppTheme" parent="AppTheme23">
+    <style name="AppTheme" parent="AppThemeBase">
         <item name="android:navigationBarColor">@color/background</item>
         <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:windowLightStatusBar">true</item>
     </style>
 
-    <style name="AppThemeHome" parent="AppThemeHome23">
+    <style name="AppThemeHome" parent="AppThemeBase">
         <item name="android:navigationBarColor">@color/background</item>
         <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:windowLightStatusBar">false</item>
     </style>
 
 </resources>
