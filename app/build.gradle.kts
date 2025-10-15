@@ -15,8 +15,8 @@ android {
         applicationId = "com.infomaniak.meet"
         minSdk = 27
         targetSdk = 35
-        versionCode = 26
-        versionName = "2.6.6"
+        versionCode = 27
+        versionName = "2.6.7"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
