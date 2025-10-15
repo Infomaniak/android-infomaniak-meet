@@ -10,8 +10,9 @@ buildscript {
 }
 
 plugins {
-    alias(libs.plugins.kotlin.serialization) apply false
-    alias(libs.plugins.ksp) apply false
+    alias(core.plugins.kotlin.android) apply false
+    alias(core.plugins.kotlin.serialization) apply false
+    alias(core.plugins.ksp) apply false
     alias(libs.plugins.androidx.navigation.safeargs) apply false
 }
 
