@@ -1,39 +1,18 @@
 [versions]
-appcompat = "1.7.1"
-constraintlayout = "2.2.1"
-coreKtx = "1.17.0"
 gradle = "8.13.0"
-gson = "2.13.2"
 jitsiMeetSdk = "11.6.1"
 kotlin = "2.2.0"
-kotlinSerialization = "2.2.20"
-kotlinxCoroutinesAndroid = "1.10.2"
-ksp = "2.2.10-2.0.2"
-lifecycleViewmodelKtx = "2.9.4"
-material = "1.13.0"
 navigationSafeArgs = "2.9.5"
 preferenceKtx = "1.2.1"
-progressbutton = "2.1.0"
 
 [libraries]
-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
-core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
 gradle = { module = "com.android.tools.build:gradle", version.ref = "gradle" }
-gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 jitsi-meet-sdk = { module = "org.jitsi.react:jitsi-meet-sdk", version.ref = "jitsiMeetSdk" }
 kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 kotlin-stdlib-jdk8 = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk8", version.ref = "kotlin" }
-kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinxCoroutinesAndroid" }
-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
-material = { module = "com.google.android.material:material", version.ref = "material" }
 preference-ktx = { module = "androidx.preference:preference-ktx", version.ref = "preferenceKtx" }
-progressbutton = { module = "com.github.razir.progressbutton:progressbutton", version.ref = "progressbutton" }
 
 [plugins]
 android-application = { id = "com.android.application" }
 androidx-navigation-safeargs = { id = "androidx.navigation.safeargs.kotlin", version.ref = "navigationSafeArgs" }
 kotlin-android = { id = "kotlin-android" }
-kotlin-parcelize = { id = "kotlin-parcelize" }
-kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlinSerialization" }
-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }

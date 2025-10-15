@@ -29,5 +29,5 @@ include(
     ":Core:Legacy:Stores",
     ":Core:Network",
     ":Core:Network:Models",
-    ":Core:Sentry"
+    ":Core:Sentry",
 )

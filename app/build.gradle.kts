@@ -1,8 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.kotlin.parcelize)
-    alias(libs.plugins.kotlin.serialization)
+    alias(core.plugins.kotlin.parcelize)
+    alias(core.plugins.kotlin.serialization)
 }
 
 val javaVersion: JavaVersion by rootProject.extra
@@ -60,17 +60,17 @@ dependencies {
 
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation(libs.kotlin.stdlib.jdk8)
-    implementation(libs.kotlinx.coroutines.android)
+    implementation(core.kotlinx.coroutines.android)
 
-    implementation(libs.appcompat)
-    implementation(libs.constraintlayout)
-    implementation(libs.core.ktx)
-    implementation(libs.lifecycle.viewmodel.ktx)
+    implementation(core.appcompat)
+    implementation(core.constraintlayout)
+    implementation(core.androidx.core.ktx)
+    implementation(core.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.preference.ktx)
 
-    implementation(libs.material)
-    implementation(libs.gson)
-    implementation(libs.progressbutton)
+    implementation(core.material)
+    implementation(core.gson)
+    implementation(core.progress.button)
 
     implementation(libs.jitsi.meet.sdk) {
         exclude(group = "com.google.firebase")
