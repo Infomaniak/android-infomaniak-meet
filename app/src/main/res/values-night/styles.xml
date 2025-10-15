@@ -1,13 +1,6 @@
 <resources>
 
     <style name="AppTheme" parent="AppThemeBase">
-        <item name="android:statusBarColor">@color/background</item>
         <item name="colorOnSurface">@android:color/white</item>
-        <item name="android:navigationBarColor">@color/background</item>
     </style>
-
-    <style name="AppThemeHome" parent="AppTheme">
-        <item name="android:statusBarColor">@color/primary</item>
-    </style>
-
 </resources>

@@ -4,10 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.updatePadding
-import com.infomaniak.lib.core.InfomaniakCore
-import com.infomaniak.lib.core.utils.SnackbarUtils.showSnackbar
-import com.infomaniak.lib.stores.StoreUtils.checkUpdateIsRequired
-import com.infomaniak.lib.stores.updatemanagers.InAppUpdateManager
+import com.infomaniak.core.legacy.InfomaniakCore
+import com.infomaniak.core.legacy.stores.StoreUtils.checkUpdateIsRequired
+import com.infomaniak.core.legacy.stores.updatemanagers.InAppUpdateManager
+import com.infomaniak.core.legacy.utils.SnackbarUtils.showSnackbar
 import com.infomaniak.meet.databinding.ActivityHomeBinding
 import com.infomaniak.meet.utils.onApplyWindowInsetsListener
 
