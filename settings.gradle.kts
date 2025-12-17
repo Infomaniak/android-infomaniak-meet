@@ -25,9 +25,11 @@ rootProject.name = "kMeet"
 
 include(
     ":app",
+    ":Core:AppVersionChecker",
     ":Core:Legacy",
     ":Core:Legacy:Stores",
     ":Core:Network",
     ":Core:Network:Models",
     ":Core:Sentry",
+    ":Core:Ui:View:EdgeToEdge"
 )

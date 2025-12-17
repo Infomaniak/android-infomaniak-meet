@@ -57,6 +57,7 @@ dependencies {
     implementation(project(":Core"))
     implementation(project(":Core:Legacy"))
     implementation(project(":Core:Legacy:Stores"))
+    implementation(project(":Core:Ui:View:EdgeToEdge"))
 
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation(libs.kotlin.stdlib.jdk8)
