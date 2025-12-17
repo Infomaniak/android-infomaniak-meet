@@ -2,16 +2,16 @@ package com.infomaniak.meet
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.updatePadding
 import com.infomaniak.core.legacy.InfomaniakCore
 import com.infomaniak.core.legacy.stores.StoreUtils.checkUpdateIsRequired
 import com.infomaniak.core.legacy.stores.updatemanagers.InAppUpdateManager
 import com.infomaniak.core.legacy.utils.SnackbarUtils.showSnackbar
+import com.infomaniak.core.ui.view.edgetoedge.EdgeToEdgeActivity
 import com.infomaniak.meet.databinding.ActivityHomeBinding
 import com.infomaniak.meet.utils.onApplyWindowInsetsListener
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : EdgeToEdgeActivity() {
 
     private val inAppUpdateManager by lazy { InAppUpdateManager(this, BuildConfig.APPLICATION_ID, BuildConfig.VERSION_CODE) }
 

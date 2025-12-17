@@ -8,7 +8,6 @@ import android.text.TextWatcher
 import android.view.View.GONE
 import android.view.inputmethod.EditorInfo
 import android.widget.EditText
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
 import androidx.lifecycle.lifecycleScope
 import androidx.preference.PreferenceManager
@@ -16,6 +15,7 @@ import com.github.razir.progressbutton.hideProgress
 import com.github.razir.progressbutton.showProgress
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import com.infomaniak.core.ui.view.edgetoedge.EdgeToEdgeActivity
 import com.infomaniak.meet.databinding.ActivityMainBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -29,7 +29,7 @@ import org.jitsi.meet.sdk.JitsiMeetUserInfo
 import java.net.URL
 import java.net.URLEncoder
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : EdgeToEdgeActivity() {
 
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
 
