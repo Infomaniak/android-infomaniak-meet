@@ -13,7 +13,7 @@ plugins {
     alias(core.plugins.kotlin.android) apply false
     alias(core.plugins.kotlin.serialization) apply false
     alias(core.plugins.ksp) apply false
-    alias(libs.plugins.androidx.navigation.safeargs) apply false
+    alias(core.plugins.navigation.safeargs) apply false
 }
 
 tasks.register<Delete>("clean") {

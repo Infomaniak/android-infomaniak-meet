@@ -26,10 +26,14 @@ rootProject.name = "kMeet"
 include(
     ":app",
     ":Core:AppVersionChecker",
+    ":Core:InAppUpdate",
     ":Core:Legacy",
-    ":Core:Legacy:Stores",
     ":Core:Network",
     ":Core:Network:Models",
     ":Core:Sentry",
+    ":Core:Ui:Compose:BasicButton",
+    ":Core:Ui:Compose:BottomStickyButtonScaffolds",
+    ":Core:Ui:Compose:Margin",
+    ":Core:Ui:Compose:Preview",
     ":Core:Ui:View:EdgeToEdge"
 )

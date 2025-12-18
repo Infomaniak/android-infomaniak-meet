@@ -49,8 +49,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.infomaniak.lib.stores.updaterequired.UpdateRequiredActivity"
-            android:theme="@style/AppTheme.RequiredUpdate" />
+            android:name="com.infomaniak.core.inappupdate.updaterequired.ui.UpdateRequiredActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme.RequiredUpdate"/>
     </application>
 
 </manifest>
