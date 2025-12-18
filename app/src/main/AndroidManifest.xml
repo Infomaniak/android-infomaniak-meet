@@ -51,7 +51,7 @@
         <activity
             android:name="com.infomaniak.core.inappupdate.updaterequired.ui.UpdateRequiredActivity"
             android:exported="false"
-            android:theme="@style/AppTheme.RequiredUpdate"/>
+            android:theme="@style/AppTheme.RequiredUpdate" />
     </application>
 
 </manifest>
