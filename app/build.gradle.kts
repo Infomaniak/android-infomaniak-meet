@@ -55,8 +55,9 @@ android {
 
 dependencies {
     implementation(project(":Core"))
+    implementation(project(":Core:InAppUpdate"))
     implementation(project(":Core:Legacy"))
-    implementation(project(":Core:Legacy:Stores"))
+    implementation(project(":Core:Network"))
     implementation(project(":Core:Ui:View:EdgeToEdge"))
 
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
