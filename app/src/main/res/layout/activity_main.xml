@@ -1,109 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-        <ImageView
-            android:id="@+id/logo"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:src="@drawable/ic_illu_main"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintWidth_max="300dp"
-            app:layout_constraintWidth_percent="0.5" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical">
 
-        <TextView
-            android:id="@+id/titleMain"
-            style="@style/TitleMedium"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/standardMargin"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="@dimen/standardMargin"
-            android:gravity="center"
-            android:text="@string/titleJoin"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/logo" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/roomNameLayout"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/standardMargin"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="@dimen/standardMargin"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/titleMain"
-            app:layout_constraintWidth_max="@dimen/standardMaxWidth">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/roomNameEdit"
-                style="@style/TextStyle"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:hint="@string/hintMeetCode"
-                android:imeOptions="actionDone"
-                android:importantForAutofill="no"
-                android:inputType="textNoSuggestions|textCapSentences"
-                android:textColor="@color/title"
-                tools:targetApi="o" />
+                android:layout_height="wrap_content">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:src="@drawable/ic_illu_main"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_max="300dp"
+                    app:layout_constraintWidth_percent="0.5" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/userNameLayout"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/standardMargin"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/roomNameLayout"
-            app:layout_constraintWidth_max="@dimen/standardMaxWidth">
+                <TextView
+                    android:id="@+id/titleMain"
+                    style="@style/TitleMedium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/standardMargin"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="@dimen/standardMargin"
+                    android:gravity="center"
+                    android:text="@string/titleJoin"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/logo" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/userNameEdit"
-                style="@style/TextStyle"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:hint="@string/hintUserNameField"
-                android:imeOptions="actionDone"
-                android:importantForAutofill="no"
-                android:inputType="textNoSuggestions|textCapSentences"
-                android:textColor="@color/title"
-                tools:targetApi="o" />
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/roomNameLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/standardMargin"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="@dimen/standardMargin"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/titleMain"
+                    app:layout_constraintWidth_max="@dimen/standardMaxWidth">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/roomNameEdit"
+                        style="@style/TextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="@string/hintMeetCode"
+                        android:imeOptions="actionDone"
+                        android:importantForAutofill="no"
+                        android:inputType="textNoSuggestions|textCapSentences"
+                        android:textColor="@color/title"
+                        tools:targetApi="o" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/userNameLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/standardMargin"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/roomNameLayout"
+                    app:layout_constraintWidth_max="@dimen/standardMaxWidth">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/userNameEdit"
+                        style="@style/TextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="@string/hintUserNameField"
+                        android:imeOptions="actionDone"
+                        android:importantForAutofill="no"
+                        android:inputType="textNoSuggestions|textCapSentences"
+                        android:textColor="@color/title"
+                        tools:targetApi="o" />
+
+                </com.google.android.material.textfield.TextInputLayout>
 
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/createButton"
-            style="@style/ButtonInfomaniak"
-            android:layout_width="0dp"
-            android:layout_margin="@dimen/standardMargin"
-            android:text="@string/startButton"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/userNameLayout"
-            app:layout_constraintWidth_max="@dimen/standardMaxWidth" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/createButton"
+                    style="@style/ButtonInfomaniak"
+                    android:layout_width="0dp"
+                    android:layout_margin="@dimen/standardMargin"
+                    android:text="@string/startButton"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/userNameLayout"
+                    app:layout_constraintWidth_max="@dimen/standardMaxWidth" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</FrameLayout>
