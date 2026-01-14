@@ -1,0 +1,2 @@
+- Fix wrong status bar color
+- Render meeting joinging screen scrollable to always access text fields and buttons even with the smallest screens configurations

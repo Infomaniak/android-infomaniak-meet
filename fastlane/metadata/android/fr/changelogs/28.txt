@@ -1,0 +1,2 @@
+- Correction de la couleur incorrecte de la barre d’état
+- Rendu de l’écran de connexion à une réunion défilable afin de toujours pouvoir accéder aux champs de texte et aux boutons, même sur les configurations d’écran les plus petites
