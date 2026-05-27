@@ -4,6 +4,11 @@ pluginManagement {
         google()
         mavenCentral()
     }
+    includeBuild("Core/build-logic")
+}
+
+plugins {
+    id("com.infomaniak.core.composite")
 }
 
 dependencyResolutionManagement {
@@ -25,15 +30,5 @@ rootProject.name = "kMeet"
 
 include(
     ":app",
-    ":Core:AppVersionChecker",
-    ":Core:InAppUpdate",
     ":Core:Legacy",
-    ":Core:Network",
-    ":Core:Network:Models",
-    ":Core:Sentry",
-    ":Core:Ui:Compose:BasicButton",
-    ":Core:Ui:Compose:BottomStickyButtonScaffolds",
-    ":Core:Ui:Compose:Margin",
-    ":Core:Ui:Compose:Preview",
-    ":Core:Ui:View:EdgeToEdge"
 )

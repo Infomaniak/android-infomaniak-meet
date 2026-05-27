@@ -54,11 +54,12 @@ android {
 }
 
 dependencies {
-    implementation(project(":Core"))
-    implementation(project(":Core:InAppUpdate"))
     implementation(project(":Core:Legacy"))
-    implementation(project(":Core:Network"))
-    implementation(project(":Core:Ui:View:EdgeToEdge"))
+
+    implementation(core.infomaniak.core.common)
+    implementation(core.infomaniak.core.inappupdate)
+    implementation(core.infomaniak.core.network)
+    implementation(core.infomaniak.core.ui.view.edgetoedge)
 
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation(libs.kotlin.stdlib.jdk8)

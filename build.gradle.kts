@@ -10,6 +10,7 @@ buildscript {
 }
 
 plugins {
+    alias(core.plugins.android.library) apply false
     alias(core.plugins.kotlin.android) apply false
     alias(core.plugins.kotlin.serialization) apply false
     alias(core.plugins.ksp) apply false
