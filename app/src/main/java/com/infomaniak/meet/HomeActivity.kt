@@ -5,9 +5,9 @@ import android.os.Bundle
 import androidx.core.view.updatePadding
 import com.infomaniak.core.inappupdate.BaseInAppUpdateManager.Companion.checkUpdateIsRequired
 import com.infomaniak.core.inappupdate.updatemanagers.InAppUpdateManager
-import com.infomaniak.core.legacy.utils.SnackbarUtils.showSnackbar
 import com.infomaniak.core.network.NetworkConfiguration
 import com.infomaniak.core.ui.view.edgetoedge.EdgeToEdgeActivity
+import com.infomaniak.core.ui.view.utils.SnackbarUtils.showSnackbar
 import com.infomaniak.meet.databinding.ActivityHomeBinding
 import com.infomaniak.meet.utils.onApplyWindowInsetsListener
 
