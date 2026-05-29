@@ -59,6 +59,7 @@ dependencies {
     implementation(core.infomaniak.core.common)
     implementation(core.infomaniak.core.inappupdate)
     implementation(core.infomaniak.core.network)
+    implementation(core.infomaniak.core.ui.view)
     implementation(core.infomaniak.core.ui.view.edgetoedge)
 
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
