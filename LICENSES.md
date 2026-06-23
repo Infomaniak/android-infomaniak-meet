@@ -1,6 +1,6 @@
-# Third-Party Licenses
+# Open Source Licenses
 
-Infomaniak Meet for Android includes the following third-party libraries in the distributed application (runtime dependencies; test-only dependencies are excluded):
+Infomaniak Meet for Android includes the following notable open source libraries (runtime dependencies; test-only dependencies are excluded). This list may not be exhaustive.
 
 | Library | License |
 |---------|---------|
@@ -12,7 +12,7 @@ Infomaniak Meet for Android includes the following third-party libraries in the 
 | [Google Material Components for Android](https://github.com/material-components/material-components-android) | [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
 | [Gson](https://github.com/google/gson) | [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
 | [Jitsi Meet SDK](https://github.com/Infomaniak/jitsi-meet) | [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
-| [Kotlin](https://kotlinlang.org/) | [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
+| [Kotlin Standard Library](https://kotlinlang.org/) | [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
 | [Kotlinx Coroutines](https://github.com/Kotlin/kotlinx.coroutines) | [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
 | [OkHttp](https://github.com/square/okhttp) | [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
 | [ProgressButton](https://github.com/razir/ProgressButton) | [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
