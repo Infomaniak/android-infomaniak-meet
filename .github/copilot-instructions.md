@@ -5,15 +5,18 @@ Infomaniak Meet (kMeet) — a privacy-friendly Android video-conferencing app. *
 
 ## One-Time Environment Setup
 ```bash
-git submodule update --init --recursive   # Core submodule (Legacy module)
+git submodule update --init --recursive   # Core submodule (Legacy module) — requires GitHub SSH access (submodule URL is git@github.com:...; rewrite to HTTPS or configure SSH credentials if needed)
 ```
 
 ## Build
-No `android.yml` CI — build validation is manual:
+No GitHub Actions build workflow is configured in this repo (there is no `android.yml`). For a manual build check:
 ```bash
 ./gradlew assembleDebug
 ./gradlew build
 ```
+
+## Test / Lint
+No repository CI tasks are currently configured for tests or linting.
 
 ## Project Layout
 ```
