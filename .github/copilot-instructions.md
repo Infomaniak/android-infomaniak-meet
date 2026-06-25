@@ -1,7 +1,7 @@
 # Copilot Coding Agent Onboarding — android-infomaniak-meet
 
 ## Overview
-Infomaniak Meet (kMeet) — a privacy-friendly Android video-conferencing app. **View-based UI only** (no Compose, no Hilt). It is a thin wrapper around the Jitsi Meet SDK distributed via a custom Maven repository. `:Core:Legacy` is the only Core *project module* included.
+Infomaniak Meet (kMeet) — a privacy-friendly Android video-conferencing app. **View-based UI only** (no Compose, no Hilt). It is a thin wrapper around the Jitsi Meet SDK pulled from the Maven repositories configured in `settings.gradle.kts` (Jitsi repo + JitPack). `:Core:Legacy` is the only Core *project module* included.
 
 ## One-Time Environment Setup
 ```bash
@@ -16,13 +16,18 @@ No GitHub Actions Android build workflow is configured in this repo (there is no
 ```
 
 ## Test / Lint
-No GitHub Actions workflows are currently configured to run tests or linting for this repo.
+CI does not currently run tests or linting for this repo. For manual checks:
+```bash
+./gradlew test
+./gradlew lint
+```
 
 ## Project Layout
 ```
 app/src/main/java/com/infomaniak/meet/
-├── ui/              # Activities + Fragments (View-based, XML layouts)
-└── utils/           # Helpers
+├── HomeActivity.kt   # Activity (View-based, XML layouts)
+├── MainActivity.kt   # Activity (View-based, XML layouts)
+└── utils/            # Helpers
 Core/                # Git submodule — Legacy module only
 gradle/libs.versions.toml
 ```
