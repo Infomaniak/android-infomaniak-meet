@@ -1,0 +1,15 @@
+<resources>
+
+    <string name="codeDoesntExistError">Ο κωδικός που εισαγάγατε δεν είναι πλέον έγκυρος ή η σύσκεψη δεν υπάρχει πλέον. Επικοινωνήστε με το άτομο που σας προσκάλεσε να συμμετάσχετε στη σύσκεψη.</string>
+    <string name="copyLinkExplanation">Αντιγράψτε/επικολλήστε τον σύνδεσμο ή τον κωδικό που σας έδωσε ο διοργανωτής της σύσκεψης.</string>
+    <string name="createButton">Έναρξη νέας σύσκεψης</string>
+    <string name="hintMeetCode">Κωδικός ή σύνδεσμος σύσκεψης</string>
+    <string name="hintUserNameField">Όνομα που εμφανίζεται στη σύσκεψη</string>
+    <string name="joinButton">Συμμετοχή με κωδικό ή σύνδεσμο</string>
+    <string name="mandatoryField">Υποχρεωτικά πεδία</string>
+    <string name="mandatoryUserName">Υποχρεωτικό ψευδώνυμο</string>
+    <string name="startButton">Συμμετοχή στη σύσκεψη</string>
+    <string name="titleCreate">Ποιο είναι το όνομά σας;</string>
+    <string name="titleJoin">Σε ποια σύσκεψη θέλετε να συμμετάσχετε;</string>
+
+</resources>

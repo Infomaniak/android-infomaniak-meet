@@ -1,0 +1,15 @@
+<resources>
+
+    <string name="codeDoesntExistError">De code die u heeft ingevoerd is niet meer geldig of de vergadering bestaat niet meer. Neem contact op met de persoon die u heeft uitgenodigd voor de vergadering.</string>
+    <string name="copyLinkExplanation">Kopieer/plak de link of code die u van de vergaderorganisator heeft ontvangen.</string>
+    <string name="createButton">Start een nieuwe vergadering</string>
+    <string name="hintMeetCode">Vergadercode of link</string>
+    <string name="hintUserNameField">Naam weergegeven in de vergadering</string>
+    <string name="joinButton">Deelnemen met een code of link</string>
+    <string name="mandatoryField">Verplichte velden</string>
+    <string name="mandatoryUserName">Verplichte bijnaam</string>
+    <string name="startButton">Deelnemen aan de vergadering</string>
+    <string name="titleCreate">Wat is uw naam?</string>
+    <string name="titleJoin">Aan welke vergadering wilt u deelnemen?</string>
+
+</resources>

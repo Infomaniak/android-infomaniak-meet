@@ -1,0 +1,15 @@
+<resources>
+
+    <string name="codeDoesntExistError">Wprowadzony kod jest nieważny lub spotkanie już nie istnieje. Skontaktuj się z osobą, która zaprosiła Cię do spotkania.</string>
+    <string name="copyLinkExplanation">Skopiuj/wklej link lub kod podany przez organizatora spotkania.</string>
+    <string name="createButton">Rozpocznij nowe spotkanie</string>
+    <string name="hintMeetCode">Kod lub link do spotkania</string>
+    <string name="hintUserNameField">Nazwa wyświetlana na spotkaniu</string>
+    <string name="joinButton">Dołącz za pomocą kodu lub linku</string>
+    <string name="mandatoryField">Wymagane pola</string>
+    <string name="mandatoryUserName">Wymagany pseudonim</string>
+    <string name="startButton">Dołącz do spotkania</string>
+    <string name="titleCreate">Jak masz na imię?</string>
+    <string name="titleJoin">Do którego spotkania chcesz dołączyć?</string>
+
+</resources>

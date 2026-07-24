@@ -1,0 +1,15 @@
+<resources>
+
+    <string name="codeDoesntExistError">O código que inseriu já não é válido ou a reunião já não existe. Contacte a pessoa que o convidou para participar na reunião.</string>
+    <string name="copyLinkExplanation">Copie/cole o link ou o código fornecido pelo organizador da reunião.</string>
+    <string name="createButton">Iniciar uma nova reunião</string>
+    <string name="hintMeetCode">Código ou link da reunião</string>
+    <string name="hintUserNameField">Nome exibido na reunião</string>
+    <string name="joinButton">Participar com um código ou link</string>
+    <string name="mandatoryField">Campos obrigatórios</string>
+    <string name="mandatoryUserName">Apelido obrigatório</string>
+    <string name="startButton">Participar na reunião</string>
+    <string name="titleCreate">Qual é o seu nome?</string>
+    <string name="titleJoin">Em que reunião gostaria de participar?</string>
+
+</resources>

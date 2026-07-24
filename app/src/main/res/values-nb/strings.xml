@@ -1,0 +1,15 @@
+<resources>
+
+    <string name="codeDoesntExistError">Koden du har angitt er ikke lenger gyldig, eller møtet eksisterer ikke lenger. Kontakt personen som inviterte deg til å bli med i møtet.</string>
+    <string name="copyLinkExplanation">Kopier/lim inn lenken eller koden du fikk av møtearrangøren.</string>
+    <string name="createButton">Start et nytt møte</string>
+    <string name="hintMeetCode">Møtekode eller lenke</string>
+    <string name="hintUserNameField">Navn vist i møtet</string>
+    <string name="joinButton">Bli med med en kode eller lenke</string>
+    <string name="mandatoryField">Obligatoriske felt</string>
+    <string name="mandatoryUserName">Obligatorisk kallenavn</string>
+    <string name="startButton">Bli med i møtet</string>
+    <string name="titleCreate">Hva er navnet ditt?</string>
+    <string name="titleJoin">Hvilket møte vil du bli med i?</string>
+
+</resources>
