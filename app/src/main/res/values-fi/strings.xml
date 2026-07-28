@@ -1,0 +1,15 @@
+<resources>
+
+    <string name="codeDoesntExistError">Syöttämäsi koodi ei ole enää voimassa tai kokousta ei enää ole. Ota yhteyttä henkilöön, joka kutsui sinut kokoukseen.</string>
+    <string name="copyLinkExplanation">Kopioi/liitä kokousjärjestäjältä saamasi linkki tai koodi.</string>
+    <string name="createButton">Aloita uusi kokous</string>
+    <string name="hintMeetCode">Kokouskoodi tai linkki</string>
+    <string name="hintUserNameField">Kokouksessa näytettävä nimi</string>
+    <string name="joinButton">Liity koodilla tai linkillä</string>
+    <string name="mandatoryField">Pakolliset kentät</string>
+    <string name="mandatoryUserName">Pakollinen nimimerkki</string>
+    <string name="startButton">Liity kokoukseen</string>
+    <string name="titleCreate">Mikä on nimesi?</string>
+    <string name="titleJoin">Mihin kokoukseen haluat liittyä?</string>
+
+</resources>

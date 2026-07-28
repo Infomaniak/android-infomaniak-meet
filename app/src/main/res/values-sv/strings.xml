@@ -1,0 +1,15 @@
+<resources>
+
+    <string name="codeDoesntExistError">Koden du angav är inte längre giltig eller mötet finns inte längre. Kontakta personen som bjöd in dig till mötet.</string>
+    <string name="copyLinkExplanation">Kopiera/klistra in länken eller koden som mötesarrangören gav dig.</string>
+    <string name="createButton">Starta ett nytt möte</string>
+    <string name="hintMeetCode">Möteskod eller länk</string>
+    <string name="hintUserNameField">Namn som visas i mötet</string>
+    <string name="joinButton">Gå med med en kod eller länk</string>
+    <string name="mandatoryField">Obligatoriska fält</string>
+    <string name="mandatoryUserName">Obligatoriskt smeknamn</string>
+    <string name="startButton">Gå med i mötet</string>
+    <string name="titleCreate">Vad heter du?</string>
+    <string name="titleJoin">Vilket möte vill du gå med i?</string>
+
+</resources>
