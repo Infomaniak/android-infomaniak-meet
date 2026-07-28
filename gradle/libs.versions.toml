@@ -1,8 +1,8 @@
 [versions]
 gradle = "8.13.0"
-jitsiMeetSdk = "11.6.1"
+jitsiMeetSdk = "13.0.0"
 kotlin = "2.2.0"
-navigationSafeArgs = "2.9.5"
+navigationSafeArgs = "2.9.8"
 preferenceKtx = "1.2.1"
 
 [libraries]

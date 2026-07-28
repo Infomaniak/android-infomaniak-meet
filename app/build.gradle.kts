@@ -9,12 +9,12 @@ val javaVersion: JavaVersion by rootProject.extra
 
 android {
     namespace = "com.infomaniak.meet"
-    compileSdk = 36
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "com.infomaniak.meet"
         minSdk = 27
-        targetSdk = 35
+        targetSdk = 37
         versionCode = 28
         versionName = "2.6.8"
 
