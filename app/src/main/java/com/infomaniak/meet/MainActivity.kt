@@ -38,7 +38,7 @@ class MainActivity : EdgeToEdgeActivity() {
     private lateinit var idRoom: String
 
     override fun onCreate(savedInstanceState: Bundle?): Unit = with(binding) {
-        super.onCreate(savedInstanceState)
+        super.onCreate(null)
         setContentView(root)
         val defaultOptions = JitsiMeetConferenceOptions.Builder()
             .setServerURL(serverURL)
