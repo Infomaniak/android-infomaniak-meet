@@ -10,6 +10,7 @@ import com.infomaniak.core.ui.view.edgetoedge.EdgeToEdgeActivity
 import com.infomaniak.core.ui.view.utils.SnackbarUtils.showSnackbar
 import com.infomaniak.meet.databinding.ActivityHomeBinding
 import com.infomaniak.meet.utils.onApplyWindowInsetsListener
+import com.infomaniak.core.inappupdate.R as InAppUpdateR
 
 class HomeActivity : EdgeToEdgeActivity() {
     private val inAppUpdateManager by lazy { InAppUpdateManager(activity = this) }
@@ -44,7 +45,7 @@ class HomeActivity : EdgeToEdgeActivity() {
 
     private fun initAppUpdateManager() {
         inAppUpdateManager.init(
-            onInstallFailure = { showSnackbar(title = R.string.errorUpdateInstall) },
+            onInstallFailure = { showSnackbar(title = InAppUpdateR.string.errorUpdateInstall) },
         )
 
         checkUpdateIsRequired(
