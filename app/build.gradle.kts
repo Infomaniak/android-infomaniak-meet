@@ -1,11 +1,12 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
     alias(core.plugins.kotlin.parcelize)
     alias(core.plugins.kotlin.serialization)
 }
 
-val javaVersion: JavaVersion by rootProject.extra
+val javaVersion = rootProject.extra["javaVersion"] as JavaVersion
 
 android {
     namespace = "com.infomaniak.meet"
@@ -44,12 +45,15 @@ android {
         targetCompatibility = javaVersion
     }
 
-    kotlinOptions {
-        jvmTarget = javaVersion.toString()
-    }
-
     buildFeatures {
         viewBinding = true
+        buildConfig = true
+    }
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget.set(JvmTarget.fromTarget(javaVersion.toString()))
     }
 }
 

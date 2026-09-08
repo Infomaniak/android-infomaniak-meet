@@ -1,7 +1,7 @@
 [versions]
-gradle = "8.13.0"
 jitsiMeetSdk = "13.0.0"
-kotlin = "2.2.0"
+gradle = "9.3.2"
+kotlin = "2.4.10"
 navigationSafeArgs = "2.9.8"
 preferenceKtx = "1.2.1"
 
@@ -15,4 +15,3 @@ preference-ktx = { module = "androidx.preference:preference-ktx", version.ref = 
 [plugins]
 android-application = { id = "com.android.application" }
 androidx-navigation-safeargs = { id = "androidx.navigation.safeargs.kotlin", version.ref = "navigationSafeArgs" }
-kotlin-android = { id = "kotlin-android" }
