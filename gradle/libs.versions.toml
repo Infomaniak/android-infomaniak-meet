@@ -1,6 +1,6 @@
 [versions]
-jitsiMeetSdk = "13.0.0"
 gradle = "9.3.2"
+jitsiMeetSdk = "13.1.1"
 kotlin = "2.4.10"
 navigationSafeArgs = "2.9.8"
 preferenceKtx = "1.2.1"
