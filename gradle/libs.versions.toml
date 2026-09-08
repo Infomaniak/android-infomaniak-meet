@@ -1,5 +1,4 @@
 [versions]
-jitsiMeetSdk = "13.0.0"
 gradle = "9.3.2"
 jitsiMeetSdk = "13.1.1"
 kotlin = "2.4.10"
