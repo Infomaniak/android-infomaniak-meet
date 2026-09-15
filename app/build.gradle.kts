@@ -2,6 +2,7 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
     alias(libs.plugins.android.application)
+    alias(core.plugins.infomaniak.android.debug.signing)
     alias(core.plugins.kotlin.parcelize)
     alias(core.plugins.kotlin.serialization)
 }
