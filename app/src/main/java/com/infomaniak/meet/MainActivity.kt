@@ -13,13 +13,13 @@ import androidx.lifecycle.lifecycleScope
 import androidx.preference.PreferenceManager
 import com.github.razir.progressbutton.hideProgress
 import com.github.razir.progressbutton.showProgress
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
+import com.infomaniak.core.legacy.api.ApiController
 import com.infomaniak.core.ui.view.edgetoedge.EdgeToEdgeActivity
 import com.infomaniak.meet.databinding.ActivityMainBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import kotlinx.serialization.decodeFromString
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import org.jitsi.meet.sdk.JitsiMeet
@@ -194,13 +194,9 @@ class MainActivity : EdgeToEdgeActivity() {
                     .build()
 
                 val response = OkHttpClient.Builder().build().newCall(request).execute()
-                val bodyResponse = response.body?.string()
-
-                result =
-                    Gson().fromJson<ApiResponse<CodeRoomCredential>>(
-                        bodyResponse,
-                        object : TypeToken<ApiResponse<CodeRoomCredential>>() {}.type
-                    )
+                response.body?.string()?.let { bodyResponse ->
+                    result = ApiController.json.decodeFromString<ApiResponse<CodeRoomCredential>>(bodyResponse)
+                }
             } catch (exception: Exception) {
                 exception.printStackTrace()
             }

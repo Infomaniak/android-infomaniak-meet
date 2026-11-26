@@ -32,7 +32,8 @@ android {
 
     buildTypes {
         getByName("release") {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(
                     getDefaultProguardFile("proguard-android-optimize.txt"),
                     "proguard-rules.pro"
@@ -77,7 +78,6 @@ dependencies {
     implementation(libs.preference.ktx)
 
     implementation(core.material)
-    implementation(core.gson)
     implementation(core.progress.button)
 
     implementation(libs.jitsi.meet.sdk) {
