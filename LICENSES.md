@@ -17,7 +17,6 @@ Infomaniak Meet for Android includes the following open source libraries. This l
 | [AndroidX ViewBinding](https://developer.android.com/topic/libraries/view-binding) | [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
 | [Coil](https://github.com/coil-kt/coil) | [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
 | [Google Material Components for Android](https://github.com/material-components/material-components-android) | [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
-| [Gson](https://github.com/google/gson) | [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
 | [Infomaniak android-login](https://github.com/Infomaniak/android-login) | [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
 | [Jitsi Meet SDK](https://github.com/jitsi/jitsi-meet) | [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
 | [Kotlin Standard Library](https://kotlinlang.org/) | [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
