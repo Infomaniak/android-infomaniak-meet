@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Jitsi and WebRTC resolve these resources by name at runtime. -->
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:keep="@string/dropbox_app_key,@drawable/ic_notification" />

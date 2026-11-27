@@ -19,3 +19,12 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+# WebRTC 155.0.1 ships a generated Dav1d JNI bridge without its decoder interface.
+-dontwarn org.webrtc.Dav1dDecoder$Natives
+
+# Preserve the null guard for layoutCallback: ViewGroup calls requestLayout before field initialization.
+-keepclassmembers,allowobfuscation class com.swmansion.rnscreens.ScreenContainer {
+    private final android.view.Choreographer$FrameCallback layoutCallback;
+    public void requestLayout();
+}
