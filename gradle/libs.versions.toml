@@ -1,5 +1,5 @@
 [versions]
-gradle = "9.3.2"
+gradle = "9.4.1"
 jitsiMeetSdk = "13.3.3"
 kotlin = "2.4.21"
 preferenceKtx = "1.2.1"
