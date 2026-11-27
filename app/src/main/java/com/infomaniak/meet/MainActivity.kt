@@ -44,6 +44,7 @@ class MainActivity : EdgeToEdgeActivity() {
             .setServerURL(serverURL)
             .setVideoMuted(true)
             .setFeatureFlag("live-streaming.enabled", false)
+            .setFeatureFlag("prejoinpage.enabled", true)
             .setFeatureFlag("reactions.enabled", false)
             .setFeatureFlag("recording.enabled", false)
             .setFeatureFlag("settings.enabled", false)
